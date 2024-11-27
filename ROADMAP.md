@@ -1,137 +1,174 @@
-# Roadmap
+# LaPair Development Roadmap
 
-## Future Plans and Upcoming Features
+This document outlines the planned development phases and milestones for the LaPair project.
 
-### 1. IR System Design
+## Phase 1: Core IR Framework (Current)
 
-- **Objective:**
-  - Design and implement a sophisticated Intermediate Representation (IR) system capable of representing syntactic and semantic structures for all supported languages.
-- **Tasks:**
-  - Analyze commonalities among the supported languages to create a unified IR structure.
-  - Define data classes or structures to represent code constructs like expressions, statements, and declarations.
-  - Ensure the IR is extensible, maintainable, and language-agnostic.
-  - Preserve all possible information from source codes, including comments, annotations, and metadata.
-- **Milestones:**
-  - Complete IR design documentation.
-  - Implement core IR data structures.
-  - Validate IR with sample code snippets.
+### IR Data Structures
 
-### 2. Parser Implementation
+- [ ] Basic blocks and instructions
+  - [x] Basic block representation
+  - [x] Instruction system
+  - [ ] Control flow graph
+  - [x] Symbol table
+- [ ] Type system foundation
+  - [x] Basic type hierarchy
+  - [ ] Type inference framework
+  - [ ] Cross-language type mapping
+- [ ] IR Builder interfaces
+  - [ ] Abstract builder interface
+  - [ ] Basic block construction
+  - [ ] Instruction creation
 
-- **Objective:**
-  - Develop custom parsers for each supported language without external parsing dependencies.
-- **Supported Languages:**
-  - C
-  - C++
-  - Objective-C
-  - Swift
-  - Java
-  - Kotlin
-  - Rust
-  - JavaScript
-  - TypeScript
-  - Python
-- **Tasks:**
-  - Implement lexical analysis (tokenization) for each language.
-  - Develop syntax analysis (parsing) modules.
-  - Handle language-specific features and nuances.
-  - Implement robust error handling and reporting mechanisms.
-- **Milestones:**
-  - Complete parsers for Python and JavaScript.
-  - Sequentially implement parsers for the remaining languages.
-  - Achieve accurate conversion from source code to IR.
+### Documentation and Testing
 
-### 3. Parallel Processing Enhancement
+- [x] Core IR interface documentation
+- [x] Basic test infrastructure
+- [ ] Comprehensive test coverage
+- [ ] API documentation
 
-- **Objective:**
-  - Utilize parallel processing to improve performance in parsing and IR generation.
-- **Tasks:**
-  - Implement multiprocessing for parsing multiple files or projects concurrently.
-  - Optimize code to handle parallel execution efficiently.
-  - Ensure thread safety and data integrity.
-- **Milestones:**
-  - Enable parallel parsing for batch processing.
-  - Benchmark performance improvements.
-  - Resolve any concurrency issues.
+## Phase 2: Language Frontend Integration (Q2-Q3 2024)
 
-### 4. Testing Infrastructure
+### Frontend Interface Design
 
-- **Objective:**
-  - Develop a comprehensive testing framework to ensure reliability.
-- **Tasks:**
-  - Write unit tests for individual parser components.
-  - Create integration tests for end-to-end parsing and IR generation.
-  - Include test cases covering various language features and edge cases.
-- **Milestones:**
-  - Achieve high test coverage (>90%).
-  - Automated testing integrated with CI workflows.
-  - Regularly update tests with new features.
+- [ ] Abstract parser interface
+  - [ ] Language-agnostic AST representation
+  - [ ] Source location tracking
+  - [ ] Error handling system
+- [ ] AST visitor framework
+  - [ ] Generic visitor patterns
+  - [ ] Type resolution visitors
+  - [ ] Symbol collection visitors
+- [ ] Source mapping system
+  - [ ] Line and column tracking
+  - [ ] Source file management
+  - [ ] Debug information preservation
 
-### 5. Detailed Documentation
+### Initial Language Support
 
-- **Objective:**
-  - Provide extensive documentation for users and contributors.
-- **Tasks:**
-  - Document the IR interfaces with in-depth explanations and examples.
-  - Update `README.md` with installation and usage instructions.
-  - Maintain `PROJECT_STATUS.md` and `ROADMAP.md` with current information.
-  - Use tools like Sphinx for generating professional documentation.
-- **Milestones:**
-  - Complete IR interface documentation.
-  - Ensure all documentation is up-to-date and accurate.
-  - Include diagrams and visual aids where helpful.
+- [ ] C/C++ frontend
+  - [ ] Lexical analysis
+  - [ ] Syntax parsing
+  - [ ] Type system mapping
+- [ ] Python frontend
+  - [ ] AST generation
+  - [ ] Type inference
+  - [ ] Module system support
+- [ ] JavaScript/TypeScript frontend
+  - [ ] ECMAScript support
+  - [ ] Type system integration
+  - [ ] Module resolution
 
-### 6. Community Engagement and Collaboration
+## Phase 3: Analysis Capabilities (Q3-Q4 2024)
 
-- **Objective:**
-  - Build a community around the project to encourage contributions and feedback.
-- **Tasks:**
-  - Establish contribution guidelines and code of conduct.
-  - Set up issue trackers and discussion forums.
-  - Promote the project on relevant platforms.
-- **Milestones:**
-  - First external contribution merged.
-  - Active discussions and collaborative development.
-  - Regular community updates.
+### Data Flow Analysis
 
-## Timeline
+- [ ] Reaching definitions analysis
+- [ ] Live variable analysis
+- [ ] Taint tracking
+- [ ] Constant propagation
 
-- **Month 1:**
+### Control Flow Analysis
 
-  - Complete IR system design and documentation.
-  - Begin implementation of Python and JavaScript parsers.
-  - Set up testing infrastructure.
+- [ ] Call graph construction
+- [ ] Path analysis
+- [ ] Loop detection
+- [ ] Branch prediction
 
-- **Month 2:**
+### Inter-procedural Analysis
 
-  - Implement parsers for C, C++, and Objective-C.
-  - Integrate parallel processing capabilities.
-  - Enhance documentation.
+- [ ] Function summary generation
+- [ ] Context sensitivity
+- [ ] Points-to analysis
+- [ ] Alias analysis
 
-- **Month 3:**
-  - Complete parsers for Java, Kotlin, Swift, Rust, and TypeScript.
-  - Optimize performance and resolve any outstanding issues.
-  - Engage with the community for feedback and contributions.
+## Phase 4: Advanced Features (Q4 2024 - Q1 2025)
 
-## Potential Improvements and Expansion
+### Cross-language Analysis
 
-- **Additional Language Support:**
+- [ ] Language boundary tracking
+- [ ] FFI support
+- [ ] Multi-language call graphs
+- [ ] Cross-language type safety
 
-  - Explore adding support for languages like Go, C#, PHP, and others.
+### Optimization Framework
 
-- **Tooling and Integration:**
+- [ ] IR optimization passes
+- [ ] Analysis result caching
+- [ ] Parallel processing
+  - [ ] Multi-threaded analysis
+  - [ ] Distributed computation
+  - [ ] Memory optimization
 
-  - Develop plugins for IDEs to utilize lapair directly.
-  - Provide command-line tools for easy parsing and IR manipulation.
+### Extensibility Features
 
-- **Visualization and Analysis:**
+- [ ] Plugin system
+- [ ] Custom analysis API
+- [ ] IR transformation framework
+- [ ] Analysis pass management
 
-  - Create tools to visualize the IR for educational or debugging purposes.
-  - Implement static analysis features based on the IR.
+## Phase 5: Tools and Integration (Q1-Q2 2025)
 
-- **Machine Learning Integration:**
-  - Utilize the IR for machine learning applications in code analysis or generation.
+### Command-line Interface
 
-## Conclusion
+- [ ] Project analysis tools
+- [ ] IR visualization
+- [ ] Report generation
+- [ ] Batch processing
 
-The roadmap outlines the strategic plan to develop lapair into a comprehensive module for parsing multiple programming languages into a rich Intermediate Representation. By following this roadmap, we aim to build a robust, efficient, and valuable tool for developers and researchers alike.
+### IDE Integration
+
+- [ ] VSCode extension
+- [ ] Language server protocol
+- [ ] Real-time analysis
+- [ ] Code navigation
+
+### CI/CD Integration
+
+- [ ] GitHub Actions support
+- [ ] Jenkins plugin
+- [ ] GitLab CI support
+- [ ] Automated analysis workflows
+
+## Future Considerations
+
+### Additional Language Support
+
+- [ ] Swift
+- [ ] Rust
+- [ ] Kotlin
+- [ ] Objective-C
+- [ ] Go
+- [ ] PHP
+
+### Advanced Analysis Features
+
+- [ ] Symbolic execution
+- [ ] Abstract interpretation
+- [ ] Machine learning integration
+- [ ] Pattern recognition
+
+### Performance Optimizations
+
+- [ ] Incremental analysis
+- [ ] Distributed processing
+- [ ] Memory optimization
+- [ ] Caching strategies
+
+### Community and Documentation
+
+- [ ] Interactive tutorials
+- [ ] API reference
+- [ ] Best practices guide
+- [ ] Contributing guidelines
+
+## Timeline Flexibility
+
+The timeline is tentative and may be adjusted based on:
+
+- Development progress
+- Community feedback
+- Feature priorities
+- Resource availability
+
+Regular updates to this roadmap will be made to reflect current progress and changing priorities.
