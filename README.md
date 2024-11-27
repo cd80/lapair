@@ -1,57 +1,37 @@
 # LaPair - Language-agnostic Program Analysis IR Framework
 
-LaPair is a robust and extensible Intermediate Representation (IR) framework designed for comprehensive program analysis and vulnerability detection across multiple programming languages.
+LaPair is a robust and extensible Intermediate Representation (IR) framework designed to serve as a unified foundation for program analysis and vulnerability detection across multiple programming languages.
 
 ## Overview
 
-LaPair provides a unified IR that serves as a foundation for analyzing source code from various programming languages including:
-
-- C/C++
-- Objective-C
-- Swift
-- Java
-- Kotlin
-- Rust
-- JavaScript/TypeScript
-- Python
-
-The framework is designed with modularity and extensibility in mind, allowing easy integration of new language frontends and analysis tools.
+LaPair provides a sophisticated IR system that can represent source code from various programming languages in a unified format, enabling powerful cross-language analysis capabilities. The framework is designed to be language-agnostic, providing clean interfaces for language frontend developers to integrate their parsers.
 
 ## Features
 
-- **Language-agnostic IR Design**: Represents syntactic and semantic structures of supported languages in a unified way
-- **Comprehensive Analysis Support**:
-  - Inter-file analysis
-  - Inter-procedural analysis
-  - Intra-procedural analysis
-- **Sophisticated Type System**:
-  - Unified type representation
-  - Cross-language type mapping
-  - Type inference capabilities
-- **Symbol Management**:
-  - Global symbol table
-  - Scope-aware symbol resolution
-  - Cross-module symbol handling
-- **Control Flow Analysis**:
-  - Comprehensive call graph generation
-  - Control flow graph construction
-  - Path analysis
-- **Extensible Architecture**:
-  - Modular language frontend design
-  - Custom parser integration support
-  - Analysis framework plugins
-- **Performance Optimizations**:
-  - Parallel processing support
-  - Efficient data structures
-  - Memory optimization
-- **Developer-Friendly**:
-  - Clean, well-documented APIs
-  - Comprehensive test coverage
-  - Detailed documentation
+### Core IR System
+
+- **Rich Instruction Set**: Comprehensive set of IR instructions supporting various programming constructs
+- **Advanced Type System**: Sophisticated type representation with support for complex type relationships
+- **Robust Symbol Management**: Efficient symbol handling with proper scoping and resolution
+- **Control Flow Representation**: Detailed control flow tracking and analysis capabilities
+
+### Integration Support
+
+- **Clean Frontend Interfaces**: Well-documented APIs for language frontend integration
+- **Flexible AST Mapping**: Support for converting various AST structures to IR
+- **Error Handling**: Robust error reporting and diagnostic capabilities
+- **Source Tracking**: Detailed source location preservation
+
+### Analysis Capabilities
+
+- **Control Flow Analysis**: Framework for analyzing program control flow
+- **Data Flow Analysis**: Infrastructure for tracking data flow and dependencies
+- **Type Analysis**: Tools for type checking and inference
+- **Symbol Resolution**: Advanced symbol lookup and resolution
 
 ## Project Status
 
-Currently in initial development. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for current progress and [ROADMAP.md](ROADMAP.md) for planned features.
+Currently focusing on core IR system enhancement. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for current progress and [ROADMAP.md](ROADMAP.md) for planned features.
 
 ## Installation
 
@@ -61,7 +41,12 @@ pip install lapair
 
 ## Usage
 
-Documentation for language frontend development and IR manipulation will be available soon.
+Documentation for frontend developers will be available as the project matures. The framework will provide:
+
+- IR system documentation
+- Integration guides
+- API reference
+- Example implementations
 
 ## Development
 

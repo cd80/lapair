@@ -2,173 +2,173 @@
 
 This document outlines the planned development phases and milestones for the LaPair project.
 
-## Phase 1: Core IR Framework (Current)
+## Phase 1: Core IR System Enhancement (Current)
 
-### IR Data Structures
+### IR Instructions
 
-- [ ] Basic blocks and instructions
-  - [x] Basic block representation
-  - [x] Instruction system
-  - [ ] Control flow graph
-  - [x] Symbol table
-- [ ] Type system foundation
-  - [x] Basic type hierarchy
-  - [ ] Type inference framework
-  - [ ] Cross-language type mapping
-- [ ] IR Builder interfaces
-  - [ ] Abstract builder interface
-  - [ ] Basic block construction
-  - [ ] Instruction creation
+- [ ] Arithmetic Operations
+  - [ ] Basic arithmetic (add, sub, mul, div)
+  - [ ] Bitwise operations
+  - [ ] Floating-point operations
+  - [ ] Vector operations
+- [ ] Control Flow
+  - [ ] Branches and jumps
+  - [ ] Function calls
+  - [ ] Exception handling
+  - [ ] Phi nodes for SSA
+- [ ] Memory Operations
+  - [ ] Load/Store
+  - [ ] Allocation
+  - [ ] Pointer arithmetic
+  - [ ] Memory barriers
+- [ ] Type Operations
+  - [ ] Type casting
+  - [ ] Type checking
+  - [ ] Generic type handling
+  - [ ] Runtime type information
 
-### Documentation and Testing
+### Type System Enhancement
 
-- [x] Core IR interface documentation
-- [x] Basic test infrastructure
-- [ ] Comprehensive test coverage
-- [ ] API documentation
+- [ ] Advanced Type Features
+  - [ ] Generic types
+  - [ ] Union types
+  - [ ] Intersection types
+  - [ ] Dependent types
+- [ ] Type Relationships
+  - [ ] Inheritance hierarchies
+  - [ ] Interface implementation
+  - [ ] Type constraints
+  - [ ] Variance rules
+- [ ] Cross-language Types
+  - [ ] Type system bridging
+  - [ ] FFI type mapping
+  - [ ] Platform-specific types
+  - [ ] ABI compatibility
 
-## Phase 2: Language Frontend Integration (Q2-Q3 2024)
+### Symbol Management
 
-### Frontend Interface Design
+- [ ] Symbol Resolution
+  - [ ] Namespace handling
+  - [ ] Scope inheritance
+  - [ ] Symbol visibility rules
+  - [ ] Name mangling
+- [ ] Link-time Features
+  - [ ] External symbols
+  - [ ] Weak symbols
+  - [ ] Symbol versioning
+  - [ ] Dynamic linking support
+- [ ] Debug Information
+  - [ ] Source locations
+  - [ ] Variable information
+  - [ ] Type metadata
+  - [ ] Line number tables
 
-- [ ] Abstract parser interface
-  - [ ] Language-agnostic AST representation
-  - [ ] Source location tracking
-  - [ ] Error handling system
-- [ ] AST visitor framework
-  - [ ] Generic visitor patterns
-  - [ ] Type resolution visitors
-  - [ ] Symbol collection visitors
-- [ ] Source mapping system
-  - [ ] Line and column tracking
-  - [ ] Source file management
-  - [ ] Debug information preservation
-
-### Initial Language Support
-
-- [ ] C/C++ frontend
-  - [ ] Lexical analysis
-  - [ ] Syntax parsing
-  - [ ] Type system mapping
-- [ ] Python frontend
-  - [ ] AST generation
-  - [ ] Type inference
-  - [ ] Module system support
-- [ ] JavaScript/TypeScript frontend
-  - [ ] ECMAScript support
-  - [ ] Type system integration
-  - [ ] Module resolution
-
-## Phase 3: Analysis Capabilities (Q3-Q4 2024)
-
-### Data Flow Analysis
-
-- [ ] Reaching definitions analysis
-- [ ] Live variable analysis
-- [ ] Taint tracking
-- [ ] Constant propagation
+## Phase 2: Analysis Framework
 
 ### Control Flow Analysis
 
-- [ ] Call graph construction
-- [ ] Path analysis
-- [ ] Loop detection
-- [ ] Branch prediction
+- [ ] Basic Block Analysis
+  - [ ] Dominance calculation
+  - [ ] Loop detection
+  - [ ] Natural loop analysis
+  - [ ] Critical edge handling
+- [ ] Call Graph Analysis
+  - [ ] Call graph construction
+  - [ ] Virtual call resolution
+  - [ ] Callback analysis
+  - [ ] Recursion handling
+- [ ] Exception Flow
+  - [ ] Exception path tracking
+  - [ ] Handler analysis
+  - [ ] Cleanup handling
+  - [ ] Zero-cost unwinding
 
-### Inter-procedural Analysis
+### Data Flow Analysis
 
-- [ ] Function summary generation
-- [ ] Context sensitivity
-- [ ] Points-to analysis
-- [ ] Alias analysis
-
-## Phase 4: Advanced Features (Q4 2024 - Q1 2025)
-
-### Cross-language Analysis
-
-- [ ] Language boundary tracking
-- [ ] FFI support
-- [ ] Multi-language call graphs
-- [ ] Cross-language type safety
+- [ ] Value Analysis
+  - [ ] Reaching definitions
+  - [ ] Live variable analysis
+  - [ ] Available expressions
+  - [ ] Constant propagation
+- [ ] Memory Analysis
+  - [ ] Alias analysis
+  - [ ] Points-to analysis
+  - [ ] Escape analysis
+  - [ ] Memory dependence
+- [ ] Concurrency Analysis
+  - [ ] Thread safety
+  - [ ] Data race detection
+  - [ ] Lock analysis
+  - [ ] Memory ordering
 
 ### Optimization Framework
 
-- [ ] IR optimization passes
-- [ ] Analysis result caching
-- [ ] Parallel processing
-  - [ ] Multi-threaded analysis
-  - [ ] Distributed computation
-  - [ ] Memory optimization
+- [ ] IR Transformations
+  - [ ] Dead code elimination
+  - [ ] Common subexpression elimination
+  - [ ] Loop optimizations
+  - [ ] Inlining
+- [ ] Analysis Results
+  - [ ] Analysis result caching
+  - [ ] Incremental updates
+  - [ ] Result serialization
+  - [ ] Dependency tracking
 
-### Extensibility Features
+## Phase 3: Frontend Integration Support
 
-- [ ] Plugin system
-- [ ] Custom analysis API
-- [ ] IR transformation framework
-- [ ] Analysis pass management
+### Frontend Interface Enhancement
 
-## Phase 5: Tools and Integration (Q1-Q2 2025)
+- [ ] AST Mapping
+  - [ ] Generic AST nodes
+  - [ ] Language-specific extensions
+  - [ ] Source preservation
+  - [ ] Comment handling
+- [ ] Type Mapping
+  - [ ] Language type conversion
+  - [ ] Type inference support
+  - [ ] Generic instantiation
+  - [ ] Type compatibility
+- [ ] Symbol Handling
+  - [ ] Name resolution
+  - [ ] Overload resolution
+  - [ ] Template instantiation
+  - [ ] Module systems
 
-### Command-line Interface
+### Integration Tools
 
-- [ ] Project analysis tools
-- [ ] IR visualization
-- [ ] Report generation
-- [ ] Batch processing
+- [ ] Validation Tools
+  - [ ] IR validators
+  - [ ] Type checkers
+  - [ ] Consistency verifiers
+  - [ ] Performance analyzers
+- [ ] Debug Support
+  - [ ] IR debugger
+  - [ ] Analysis visualizers
+  - [ ] Profile generators
+  - [ ] Memory analyzers
+- [ ] Integration Testing
+  - [ ] Test frameworks
+  - [ ] Benchmark suites
+  - [ ] Conformance tests
+  - [ ] Performance tests
 
-### IDE Integration
+## Timeline
 
-- [ ] VSCode extension
-- [ ] Language server protocol
-- [ ] Real-time analysis
-- [ ] Code navigation
+- Phase 1: Q2-Q3 2024
 
-### CI/CD Integration
+  - Core IR system enhancement
+  - Type system improvements
+  - Symbol management features
 
-- [ ] GitHub Actions support
-- [ ] Jenkins plugin
-- [ ] GitLab CI support
-- [ ] Automated analysis workflows
+- Phase 2: Q3-Q4 2024
 
-## Future Considerations
+  - Analysis framework implementation
+  - Optimization infrastructure
+  - Performance tuning
 
-### Additional Language Support
+- Phase 3: Q4 2024 - Q1 2025
+  - Frontend integration support
+  - Tool development
+  - Documentation and examples
 
-- [ ] Swift
-- [ ] Rust
-- [ ] Kotlin
-- [ ] Objective-C
-- [ ] Go
-- [ ] PHP
-
-### Advanced Analysis Features
-
-- [ ] Symbolic execution
-- [ ] Abstract interpretation
-- [ ] Machine learning integration
-- [ ] Pattern recognition
-
-### Performance Optimizations
-
-- [ ] Incremental analysis
-- [ ] Distributed processing
-- [ ] Memory optimization
-- [ ] Caching strategies
-
-### Community and Documentation
-
-- [ ] Interactive tutorials
-- [ ] API reference
-- [ ] Best practices guide
-- [ ] Contributing guidelines
-
-## Timeline Flexibility
-
-The timeline is tentative and may be adjusted based on:
-
-- Development progress
-- Community feedback
-- Feature priorities
-- Resource availability
-
-Regular updates to this roadmap will be made to reflect current progress and changing priorities.
+Note: Timeline is tentative and subject to adjustment based on development progress and community feedback.
