@@ -1,174 +1,55 @@
-# LaPair Development Roadmap
+# Project Roadmap
 
-This document outlines the planned development phases and milestones for the LaPair project.
+## Phase 1: Core IR Framework (**Completed**)
 
-## Phase 1: Core IR System Enhancement (Current)
+- [x] **Develop a robust, extensible IR framework**
+  - [x] Implement basic blocks (`lapair/core/ir.py`)
+  - [x] Implement comprehensive instruction set (`lapair/core/instructions.py`)
+    - Implemented instruction classes:
+      - [x] Arithmetic operations (`BinaryInstruction`)
+      - [x] Comparison operations (`CompareInstruction`)
+      - [x] Memory operations (`AllocaInstruction`, `LoadInstruction`, `StoreInstruction`, `GetElementPtrInstruction`)
+      - [x] Control flow instructions (`BranchInstruction`, `ReturnInstruction`, `CallInstruction`, `PhiInstruction`, `SelectInstruction`)
+  - [x] Implement functions and modules (`lapair/core/ir.py`)
+  - [x] Implement advanced type system (`lapair/core/types.py`)
+  - [x] Implement symbol tables with scope and namespace management (`lapair/core/symbol.py`)
+  - [x] Ensure support for inter-procedural and inter-file analysis
+  - [x] Thoroughly document the interfaces and architecture
+  - [x] Achieve high code quality with comprehensive testing (All tests passing)
 
-### IR Instructions
+## Phase 2: Analysis Framework Implementation
 
-- [ ] Arithmetic Operations
-  - [ ] Basic arithmetic (add, sub, mul, div)
-  - [ ] Bitwise operations
-  - [ ] Floating-point operations
-  - [ ] Vector operations
-- [ ] Control Flow
-  - [ ] Branches and jumps
-  - [ ] Function calls
-  - [ ] Exception handling
-  - [ ] Phi nodes for SSA
-- [ ] Memory Operations
-  - [ ] Load/Store
-  - [ ] Allocation
-  - [ ] Pointer arithmetic
-  - [ ] Memory barriers
-- [ ] Type Operations
-  - [ ] Type casting
-  - [ ] Type checking
-  - [ ] Generic type handling
-  - [ ] Runtime type information
+- [ ] **Implement control flow analysis tools**
+- [ ] **Implement data flow tracking mechanisms**
+- [ ] **Leverage inter-procedural and inter-file analysis capabilities**
+- [ ] **Design and implement optimization infrastructure**
+- [ ] **Develop call graph construction and usage**
+- [ ] **Develop cross-module dependency tracking**
+- [ ] **Ensure scalability and performance with large codebases**
 
-### Type System Enhancement
+## Phase 3: Advanced Features and Optimization
 
-- [ ] Advanced Type Features
-  - [ ] Generic types
-  - [ ] Union types
-  - [ ] Intersection types
-  - [ ] Dependent types
-- [ ] Type Relationships
-  - [ ] Inheritance hierarchies
-  - [ ] Interface implementation
-  - [ ] Type constraints
-  - [ ] Variance rules
-- [ ] Cross-language Types
-  - [ ] Type system bridging
-  - [ ] FFI type mapping
-  - [ ] Platform-specific types
-  - [ ] ABI compatibility
+- [ ] **Enhance the type system**
+  - [ ] Support generics and type parameters
+  - [ ] Implement type inference mechanisms
+  - [ ] Represent complex type hierarchies and relationships
+- [ ] **Implement global symbol tables and unified type systems**
+- [ ] **Optimize data structures and algorithms for performance**
+- [ ] **Plan and implement advanced analysis features**
 
-### Symbol Management
+## Phase 4: Documentation and Community Collaboration
 
-- [ ] Symbol Resolution
-  - [ ] Namespace handling
-  - [ ] Scope inheritance
-  - [ ] Symbol visibility rules
-  - [ ] Name mangling
-- [ ] Link-time Features
-  - [ ] External symbols
-  - [ ] Weak symbols
-  - [ ] Symbol versioning
-  - [ ] Dynamic linking support
-- [ ] Debug Information
-  - [ ] Source locations
-  - [ ] Variable information
-  - [ ] Type metadata
-  - [ ] Line number tables
+- [ ] **Expand documentation beyond code comments**
+  - [ ] Create user guides and developer documentation
+- [ ] **Maintain high code quality and coding standards**
+- [ ] **Establish version control workflows and issue tracking**
+- [ ] **Encourage community contributions**
+  - [ ] Provide guidelines for contributing to the project
+  - [ ] Foster collaboration for extending features and capabilities
 
-## Phase 2: Analysis Framework
+## Future Considerations
 
-### Control Flow Analysis
-
-- [ ] Basic Block Analysis
-  - [ ] Dominance calculation
-  - [ ] Loop detection
-  - [ ] Natural loop analysis
-  - [ ] Critical edge handling
-- [ ] Call Graph Analysis
-  - [ ] Call graph construction
-  - [ ] Virtual call resolution
-  - [ ] Callback analysis
-  - [ ] Recursion handling
-- [ ] Exception Flow
-  - [ ] Exception path tracking
-  - [ ] Handler analysis
-  - [ ] Cleanup handling
-  - [ ] Zero-cost unwinding
-
-### Data Flow Analysis
-
-- [ ] Value Analysis
-  - [ ] Reaching definitions
-  - [ ] Live variable analysis
-  - [ ] Available expressions
-  - [ ] Constant propagation
-- [ ] Memory Analysis
-  - [ ] Alias analysis
-  - [ ] Points-to analysis
-  - [ ] Escape analysis
-  - [ ] Memory dependence
-- [ ] Concurrency Analysis
-  - [ ] Thread safety
-  - [ ] Data race detection
-  - [ ] Lock analysis
-  - [ ] Memory ordering
-
-### Optimization Framework
-
-- [ ] IR Transformations
-  - [ ] Dead code elimination
-  - [ ] Common subexpression elimination
-  - [ ] Loop optimizations
-  - [ ] Inlining
-- [ ] Analysis Results
-  - [ ] Analysis result caching
-  - [ ] Incremental updates
-  - [ ] Result serialization
-  - [ ] Dependency tracking
-
-## Phase 3: Frontend Integration Support
-
-### Frontend Interface Enhancement
-
-- [ ] AST Mapping
-  - [ ] Generic AST nodes
-  - [ ] Language-specific extensions
-  - [ ] Source preservation
-  - [ ] Comment handling
-- [ ] Type Mapping
-  - [ ] Language type conversion
-  - [ ] Type inference support
-  - [ ] Generic instantiation
-  - [ ] Type compatibility
-- [ ] Symbol Handling
-  - [ ] Name resolution
-  - [ ] Overload resolution
-  - [ ] Template instantiation
-  - [ ] Module systems
-
-### Integration Tools
-
-- [ ] Validation Tools
-  - [ ] IR validators
-  - [ ] Type checkers
-  - [ ] Consistency verifiers
-  - [ ] Performance analyzers
-- [ ] Debug Support
-  - [ ] IR debugger
-  - [ ] Analysis visualizers
-  - [ ] Profile generators
-  - [ ] Memory analyzers
-- [ ] Integration Testing
-  - [ ] Test frameworks
-  - [ ] Benchmark suites
-  - [ ] Conformance tests
-  - [ ] Performance tests
-
-## Timeline
-
-- Phase 1: Q2-Q3 2024
-
-  - Core IR system enhancement
-  - Type system improvements
-  - Symbol management features
-
-- Phase 2: Q3-Q4 2024
-
-  - Analysis framework implementation
-  - Optimization infrastructure
-  - Performance tuning
-
-- Phase 3: Q4 2024 - Q1 2025
-  - Frontend integration support
-  - Tool development
-  - Documentation and examples
-
-Note: Timeline is tentative and subject to adjustment based on development progress and community feedback.
+- [ ] **Integration with frontends (developed in a separate project)**
+- [ ] **Explore support for additional programming languages**
+- [ ] **Investigate integration with existing development tools and environments**
+- [ ] **Continuously improve the framework based on user feedback and evolving industry needs**

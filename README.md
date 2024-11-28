@@ -1,77 +1,71 @@
-# LaPair - Language-agnostic Program Analysis IR Framework
+# LaPair
 
-LaPair is a robust and extensible Intermediate Representation (IR) framework designed to serve as a unified foundation for program analysis and vulnerability detection across multiple programming languages.
+LaPair is a robust and extensible Intermediate Representation (IR) framework designed to facilitate program analysis and vulnerability detection across multiple programming languages. The core IR serves as a solid foundation for future analysis tools and supports comprehensive code representation.
 
-## Overview
+## Key Features
 
-LaPair provides a sophisticated IR system that can represent source code from various programming languages in a unified format, enabling powerful cross-language analysis capabilities. The framework is designed to be language-agnostic, providing clean interfaces for language frontend developers to integrate their parsers.
+- **Unified IR Framework**
 
-## Features
+  - Supports multiple programming languages: **C, C++, Objective-C, Swift, Java, Kotlin, Rust, JavaScript, TypeScript, Python**.
+  - Provides a language-agnostic representation to enable consistent analysis across different languages.
 
-### Core IR System
+- **Inter-Procedural and Inter-File Analysis Support**
 
-- **Rich Instruction Set**: Comprehensive set of IR instructions supporting various programming constructs
-- **Advanced Type System**: Sophisticated type representation with support for complex type relationships
-- **Robust Symbol Management**: Efficient symbol handling with proper scoping and resolution
-- **Control Flow Representation**: Detailed control flow tracking and analysis capabilities
+  - Designed to inherently support inter-procedural representations, allowing analysis across function and method boundaries.
+  - Facilitates inter-file analysis, enabling cross-module optimizations and comprehensive program understanding.
 
-### Integration Support
+- **Modular Architecture**
 
-- **Clean Frontend Interfaces**: Well-documented APIs for language frontend integration
-- **Flexible AST Mapping**: Support for converting various AST structures to IR
-- **Error Handling**: Robust error reporting and diagnostic capabilities
-- **Source Tracking**: Detailed source location preservation
+  - Separates core IR components from language frontends and analysis modules.
+  - Promotes a clean, maintainable, and extensible project structure.
 
-### Analysis Capabilities
+- **Advanced Type System**
 
-- **Control Flow Analysis**: Framework for analyzing program control flow
-- **Data Flow Analysis**: Infrastructure for tracking data flow and dependencies
-- **Type Analysis**: Tools for type checking and inference
-- **Symbol Resolution**: Advanced symbol lookup and resolution
+  - Capable of representing complex types and type relationships found in various languages.
+  - Supports language-specific type features while maintaining a unified approach.
 
-## Project Status
+- **Symbol Table Management**
+  - Implements symbol tables with scope and namespace handling.
+  - Supports accurate symbol resolution across different languages and modules.
 
-Currently focusing on core IR system enhancement. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for current progress and [ROADMAP.md](ROADMAP.md) for planned features.
+## Getting Started
 
-## Installation
+### Prerequisites
 
-```bash
-pip install lapair
-```
+- **Python 3.7 or higher**
+- **pytest** for running tests
 
-## Usage
+### Installation
 
-Documentation for frontend developers will be available as the project matures. The framework will provide:
-
-- IR system documentation
-- Integration guides
-- API reference
-- Example implementations
-
-## Development
-
-To set up the development environment:
+Clone the repository:
 
 ```bash
 git clone https://github.com/cd80/lapair.git
 cd lapair
-pip install -e ".[dev]"
 ```
 
-Run tests:
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running Tests
+
+Ensure all tests pass:
 
 ```bash
 pytest -v
 ```
 
+## Documentation
+
+Comprehensive documentation is available to help you understand and utilize the LaPair framework effectively. [Link to documentation or explain where to find it.]
+
 ## Contributing
 
-Contributions are welcome! Please read our contributing guidelines before submitting pull requests. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For questions or inquiries, please open an issue on GitHub.
+This project is licensed under the [MIT License](LICENSE).
