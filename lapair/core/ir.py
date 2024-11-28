@@ -7,15 +7,14 @@ basic blocks, instructions, functions, and modules.
 
 from __future__ import annotations
 
-import abc
-from typing import Dict, List, Optional, Set, TypeVar, Generic
-from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Set, TypeVar
 import attr
 
 from lapair.core.types import Type, TypeSystem
-from lapair.core.symbol import Symbol, SymbolTable
+from lapair.core.symbol import SymbolTable
 
 T = TypeVar('T')
+
 
 @attr.s(auto_attribs=True, frozen=True)
 class Location:
@@ -26,6 +25,7 @@ class Location:
     end_line: Optional[int] = None
     end_column: Optional[int] = None
 
+
 @attr.s(auto_attribs=True)
 class Value:
     """Base class for all IR values."""
@@ -33,21 +33,21 @@ class Value:
     name: Optional[str] = None
     location: Optional[Location] = None
 
+
 @attr.s(auto_attribs=True, eq=False)
 class Instruction(Value):
     """Base class for IR instructions."""
     operands: List[Value] = attr.Factory(list)
-    users: Set[Instruction] = attr.Factory(set)
-    parent: Optional[BasicBlock] = attr.ib(default=None, repr=False)
-    _hash: int = attr.ib(factory=lambda: id(object()), init=False)
-
-    def __hash__(self) -> int:
-        return self._hash
+    users: Set['Instruction'] = attr.Factory(set)
+    parent: Optional['BasicBlock'] = attr.ib(default=None, repr=False)
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, Instruction):
-            return NotImplemented
-        return self._hash == other._hash
+        """Check equality based on object identity."""
+        return self is other
+
+    def __hash__(self) -> int:
+        """Hash based on object identity."""
+        return id(self)
 
     def add_operand(self, operand: Value) -> None:
         """Add an operand to this instruction."""
@@ -61,38 +61,39 @@ class Instruction(Value):
         if isinstance(operand, Instruction):
             operand.users.remove(self)
 
+
 @attr.s(auto_attribs=True, eq=False)
 class BasicBlock:
     """Container for IR instructions with control flow information."""
     name: str
     instructions: List[Instruction] = attr.Factory(list)
-    predecessors: Set[BasicBlock] = attr.Factory(set)
-    successors: Set[BasicBlock] = attr.Factory(set)
-    parent: Optional[Function] = attr.ib(default=None, repr=False)
-    _hash: int = attr.ib(factory=lambda: id(object()), init=False)
-
-    def __hash__(self) -> int:
-        return self._hash
+    predecessors: Set['BasicBlock'] = attr.Factory(set)
+    successors: Set['BasicBlock'] = attr.Factory(set)
+    parent: Optional['Function'] = attr.ib(default=None, repr=False)
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, BasicBlock):
-            return NotImplemented
-        return self._hash == other._hash
+        """Check equality based on object identity."""
+        return self is other
+
+    def __hash__(self) -> int:
+        """Hash based on object identity."""
+        return id(self)
 
     def add_instruction(self, instruction: Instruction) -> None:
         """Add an instruction to this basic block."""
         instruction.parent = self
         self.instructions.append(instruction)
 
-    def add_predecessor(self, block: BasicBlock) -> None:
+    def add_predecessor(self, block: 'BasicBlock') -> None:
         """Add a predecessor basic block."""
         self.predecessors.add(block)
         block.successors.add(self)
 
-    def remove_predecessor(self, block: BasicBlock) -> None:
+    def remove_predecessor(self, block: 'BasicBlock') -> None:
         """Remove a predecessor basic block."""
         self.predecessors.remove(block)
         block.successors.remove(self)
+
 
 @attr.s(auto_attribs=True)
 class Function:
@@ -102,12 +103,13 @@ class Function:
     parameters: List[Value]
     blocks: List[BasicBlock] = attr.Factory(list)
     symbol_table: SymbolTable = attr.Factory(SymbolTable)
-    parent: Optional[Module] = attr.ib(default=None, repr=False)
+    parent: Optional['Module'] = attr.ib(default=None, repr=False)
 
     def add_block(self, block: BasicBlock) -> None:
         """Add a basic block to this function."""
         block.parent = self
         self.blocks.append(block)
+
 
 @attr.s(auto_attribs=True)
 class Module:
@@ -121,6 +123,7 @@ class Module:
         """Add a function to this module."""
         function.parent = self
         self.functions[function.name] = function
+
 
 class IR:
     """Main interface for working with the IR."""
