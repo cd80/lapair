@@ -27,6 +27,7 @@ LaPair is a specialized Intermediate Representation (IR) framework designed to s
   - Reaching Definitions Analysis
   - Live Variable Analysis
   - Constant Propagation Analysis
+  - Available Expressions Analysis
   - Each analysis thoroughly tested with high coverage
 
 - [x] **Frontend Interface**
@@ -38,7 +39,6 @@ LaPair is a specialized Intermediate Representation (IR) framework designed to s
 
 - **Enhance Analysis Framework**
 
-  - [ ] Available Expressions Analysis
   - [ ] Very Busy Expressions Analysis
   - [ ] Dominance Analysis
   - [ ] Support for more complex data flow lattices
@@ -58,10 +58,27 @@ LaPair is a specialized Intermediate Representation (IR) framework designed to s
 
 ## Latest Updates
 
-- **Analysis Framework Enhancement**: Implemented and thoroughly tested constant propagation analysis
-- **IR Framework Improvements**: Added support for bidirectional control flow
-- **Documentation**: Updated to clarify framework's purpose and usage
-- **Testing**: Comprehensive test suite with high coverage
+- **Analysis Framework Enhancement**:
+
+  - Implemented Available Expressions Analysis with proper handling of expressions and variable versions
+  - Added specific instruction types for better operation tracking
+  - Improved handling of expressions at join points
+  - Added comprehensive test coverage
+
+- **IR Framework Improvements**:
+
+  - Added support for specific instruction types (AddInstruction, MulInstruction)
+  - Enhanced control flow handling
+  - Improved variable version tracking
+
+- **Documentation**:
+
+  - Updated to clarify framework's purpose and usage
+  - Added detailed documentation for Available Expressions Analysis
+
+- **Testing**:
+  - Comprehensive test suite with high coverage
+  - Added tests for Available Expressions Analysis
 
 ## Known Issues
 

@@ -29,6 +29,7 @@ LaPair is **not** a programming language or a compiler - it is a framework that 
   - Reaching Definitions Analysis
   - Live Variable Analysis
   - Constant Propagation Analysis
+  - Available Expressions Analysis
 
 ### Extensibility
 
@@ -44,12 +45,14 @@ LaPair is **not** a programming language or a compiler - it is a framework that 
 - Functions and modules
 - Type system
 - Symbol management
+- Specialized instruction types for operations
 
 ### Analysis Framework (`lapair/analysis/`)
 
 - Control flow analysis
 - Data flow analysis infrastructure
 - Common analysis implementations
+- Variable version tracking
 
 ### Frontend Interface (`lapair/frontends/`)
 
@@ -95,6 +98,34 @@ class MyAnalysis(DataFlowAnalysis):
         pass
 ```
 
+### Working with Available Expressions Analysis
+
+```python
+from lapair.core.ir import Function, BasicBlock, AddInstruction, MulInstruction
+from lapair.analysis.control_flow import ControlFlowGraph
+from lapair.analysis.data_flow import AvailableExpressionsAnalysis
+
+# Create IR structures
+function = Function(name="example", return_type=void_type, parameters=[])
+block = BasicBlock(name="entry")
+
+# Add instructions
+x_plus_y = AddInstruction(type=int_type, name="a", operands=[x, y])
+x_times_y = MulInstruction(type=int_type, name="b", operands=[x, y])
+block.add_instruction(x_plus_y)
+block.add_instruction(x_times_y)
+
+function.add_block(block)
+
+# Perform analysis
+cfg = ControlFlowGraph(function)
+analysis = AvailableExpressionsAnalysis(function=function, cfg=cfg)
+analysis.analyze()
+
+# Get results
+available_expressions = analysis.out_sets[cfg.nodes[block]]
+```
+
 ### Working with the IR
 
 ```python
@@ -130,3 +161,10 @@ We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Recent Updates
+
+- Added Available Expressions Analysis with proper handling of expressions and variable versions
+- Implemented specific instruction types for better operation tracking
+- Enhanced control flow handling with improved variable version tracking
+- Added comprehensive test coverage for all analyses
