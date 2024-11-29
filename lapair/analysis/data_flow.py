@@ -7,11 +7,56 @@ on the IR using the control flow graph.
 
 from __future__ import annotations
 
-from typing import Dict, Set, Any, List, Optional, Tuple
+from typing import Dict, Set, Any, List, Optional, Tuple, FrozenSet
 import attr
 
-from lapair.core.ir import Function, Instruction, Constant, Value
+from lapair.core.ir import (
+    Function, Instruction, Constant, Value,
+    AddInstruction, MulInstruction, AssignInstruction
+)
 from lapair.analysis.control_flow import ControlFlowGraph, CFGNode
+
+
+@attr.s(frozen=True, eq=True)
+class Expression:
+    """Represents an expression in the program."""
+    operator: str = attr.ib()
+    operands: Tuple[str, ...] = attr.ib()
+
+    # Map instruction types to operator names
+    OPERATOR_MAP = {
+        AddInstruction: 'add',
+        MulInstruction: 'multiply',
+        AssignInstruction: 'assign',
+    }
+
+    @classmethod
+    def from_instruction(cls, instruction: Instruction) -> Optional[Expression]:
+        """Create an Expression from an Instruction if possible."""
+        # Only create expressions for operations with multiple operands
+        if len(instruction.operands) <= 1:
+            return None
+
+        # Get the operator from the instruction type
+        operator = cls.OPERATOR_MAP.get(instruction.__class__)
+        if operator is None:
+            return None  # Skip unsupported instruction types
+
+        # Get operand names
+        operand_names = []
+        for operand in instruction.operands:
+            if isinstance(operand, Instruction) and operand.name:
+                operand_names.append(operand.name)
+            elif isinstance(operand, Constant):
+                # Include constants in the expression
+                operand_names.append(f"const_{operand.value}")
+            else:
+                return None  # Skip expressions with unsupported operands
+
+        if not operand_names:
+            return None
+
+        return cls(operator=operator, operands=tuple(sorted(operand_names)))
 
 
 @attr.s(auto_attribs=True)
@@ -77,6 +122,96 @@ class DataFlowAnalysis:
                 self.in_sets[node] = new_in_set
                 if new_in_set != old_in_set:
                     worklist.update(node.predecessors)
+
+
+@attr.s(auto_attribs=True)
+class AvailableExpressionsAnalysis(DataFlowAnalysis):
+    """Implementation of Available Expressions Analysis."""
+    var_versions: Dict[str, Dict[CFGNode, int]] = attr.Factory(dict)
+    killed_vars: Dict[CFGNode, Set[str]] = attr.Factory(dict)
+
+    def initialize(self):
+        """Initialize analysis data structures."""
+        super().initialize()
+        self.var_versions = {}  # Reset version tracking
+        self.killed_vars = {}  # Reset killed variables tracking
+
+    def is_forward(self) -> bool:
+        """Indicate that this is a forward analysis."""
+        return True
+
+    def initial_data(self) -> Set[Expression]:
+        """Initial data is an empty set of expressions."""
+        return set()
+
+    def get_var_version(self, var: str, node: CFGNode) -> int:
+        """Get the version of a variable at a specific node."""
+        if var not in self.var_versions:
+            self.var_versions[var] = {}
+        return self.var_versions[var].get(node, 0)
+
+    def increment_var_version(self, var: str, node: CFGNode):
+        """Increment the version of a variable at a specific node."""
+        if var not in self.var_versions:
+            self.var_versions[var] = {}
+        current_version = self.var_versions[var].get(node, 0)
+        self.var_versions[var][node] = current_version + 1
+
+    def flow_function(self, node: CFGNode, in_set: Set[Expression]) -> Set[Expression]:
+        """Compute the out set for available expressions."""
+        # Start with expressions from input
+        out_set = in_set.copy()
+        killed_vars = set()  # Variables that are modified in this block
+
+        # First pass: collect killed variables
+        for instruction in node.block.instructions:
+            if instruction.name:
+                killed_vars.add(instruction.name)
+
+        # Store killed variables for this node
+        self.killed_vars[node] = killed_vars
+
+        # Remove expressions that use killed variables
+        out_set = {expr for expr in out_set 
+                  if not any(var in killed_vars for var in expr.operands)}
+
+        # Second pass: add new expressions
+        for instruction in node.block.instructions:
+            # Try to create an expression from the instruction
+            expr = Expression.from_instruction(instruction)
+            if expr is not None:
+                # Add the expression regardless of variable versions
+                # The meet operator will handle version mismatches
+                out_set.add(expr)
+
+        return out_set
+
+    def meet_operator(self, sets: List[Set[Expression]]) -> Set[Expression]:
+        """Meet operator using intersection for available expressions."""
+        if not sets:
+            return set()
+        if len(sets) == 1:
+            return sets[0].copy()
+
+        # Get all killed variables from all paths
+        all_killed_vars = set()
+        for node in self.cfg.get_nodes():
+            if node in self.killed_vars:
+                all_killed_vars.update(self.killed_vars[node])
+
+        # For multiple predecessors, an expression is only available if:
+        # 1. It's available from all predecessors
+        # 2. None of its variables have been killed along any path
+        result = sets[0].copy()
+        for s in sets[1:]:
+            # Only keep expressions that appear in all sets
+            result = {expr for expr in result if expr in s}
+
+        # Remove expressions that use any killed variables
+        result = {expr for expr in result 
+                 if not any(var in all_killed_vars for var in expr.operands)}
+
+        return result
 
 
 @attr.s(auto_attribs=True)
@@ -237,21 +372,4 @@ class ConstantPropagationAnalysis(DataFlowAnalysis):
             else:
                 result[key] = self.TOP
 
-        return result
-
-
-@attr.s(auto_attribs=True)
-class ExampleDataFlowAnalysis(DataFlowAnalysis):
-    """Example implementation of a data flow analysis."""
-
-    def flow_function(self, node: CFGNode, data_set: Set[Any]) -> Set[Any]:
-        """Example flow function that simply copies the data_set."""
-        # In a real analysis, this function would modify the data_set based on the instructions in the node
-        return data_set.copy()
-
-    def meet_operator(self, sets: List[Set[Any]]) -> Set[Any]:
-        """Example meet operator using union."""
-        result = set()
-        for data_set in sets:
-            result.update(data_set)
         return result

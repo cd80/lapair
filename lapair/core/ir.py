@@ -2,7 +2,7 @@
 Core IR definitions for the LaPair framework.
 
 This module defines the core Intermediate Representation structures, including
-Instructions, Values, BasicBlocks, Functions, Modules, Constants, and Location.
+Instructions, Values, BasicBlocks, Functions, Modules, and Constants.
 """
 
 from __future__ import annotations
@@ -65,6 +65,36 @@ class Instruction(Value):
         """Remove an operand from the instruction."""
         self.operands.remove(value)
         value.users.discard(self)
+
+
+@attr.s(auto_attribs=True, eq=False)
+class AddInstruction(Instruction):
+    """Represents an addition operation."""
+    pass
+
+
+@attr.s(auto_attribs=True, eq=False)
+class MulInstruction(Instruction):
+    """Represents a multiplication operation."""
+    pass
+
+
+@attr.s(auto_attribs=True, eq=False)
+class SubInstruction(Instruction):
+    """Represents a subtraction operation."""
+    pass
+
+
+@attr.s(auto_attribs=True, eq=False)
+class DivInstruction(Instruction):
+    """Represents a division operation."""
+    pass
+
+
+@attr.s(auto_attribs=True, eq=False)
+class AssignInstruction(Instruction):
+    """Represents a simple assignment operation."""
+    pass
 
 
 @attr.s(auto_attribs=True, eq=False)
