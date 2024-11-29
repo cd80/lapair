@@ -16,7 +16,7 @@ LaPair is a robust and extensible Intermediate Representation (IR) framework des
 
 - **Modular Architecture**
 
-  - Separates core IR components from language frontends and analysis modules.
+  - Separates core IR components from analysis modules.
   - Promotes a clean, maintainable, and extensible project structure.
 
 - **Advanced Type System**
@@ -25,8 +25,15 @@ LaPair is a robust and extensible Intermediate Representation (IR) framework des
   - Supports language-specific type features while maintaining a unified approach.
 
 - **Symbol Table Management**
+
   - Implements symbol tables with scope and namespace handling.
   - Supports accurate symbol resolution across different languages and modules.
+
+- **Analysis Framework**
+  - **Control Flow Analysis**: Includes the `ControlFlowGraph` class for building and analyzing control flow graphs from the IR.
+  - **Data Flow Analysis Framework**: Provides a generic `DataFlowAnalysis` framework to implement various data flow analyses.
+    - **Reaching Definitions Analysis**: Implements `ReachingDefinitionsAnalysis` to compute definitions reaching each point in the program.
+    - **Example Data Flow Analyses**: Framework can be extended to include analyses like Live Variable Analysis, Constant Propagation, etc.
 
 ## Getting Started
 
