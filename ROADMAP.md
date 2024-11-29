@@ -2,36 +2,41 @@
 
 ## Phase 1: Core IR Framework (✓ Completed)
 
-- [x] **Core IR Components**
+- [x] **IR Foundation**
 
-  - [x] Basic blocks with instruction management
-  - [x] Functions with block management
-  - [x] Modules with function and global variable management
-  - [x] Parent-child relationships between components
-  - [x] Advanced type system
-  - [x] Symbol table management
+  - [x] Basic block representation
+  - [x] Instruction set for analysis
+  - [x] Function and module organization
+  - [x] Parent-child relationships
+  - [x] Location tracking for source mapping
 
-- [x] **Instruction Set**
-  - [x] Arithmetic operations
-  - [x] Memory operations
-  - [x] Control flow instructions
-  - [x] Comparison operations
+- [x] **Type System**
+
+  - [x] Language-agnostic type representation
+  - [x] Support for primitive types
+  - [x] Composite type handling
+  - [x] Type compatibility checking
+
+- [x] **Symbol Management**
+  - [x] Scope-aware symbol tables
+  - [x] Symbol resolution infrastructure
+  - [x] Cross-module symbol handling
 
 ## Phase 2: Analysis Framework (🔄 In Progress)
 
 ### Completed
 
-- [x] **Control Flow Analysis**
+- [x] **Control Flow Infrastructure**
 
   - [x] Control flow graph construction
-  - [x] Bidirectional control flow support
   - [x] Graph traversal algorithms
+  - [x] Predecessor/successor management
 
-- [x] **Data Flow Analysis Framework**
+- [x] **Data Flow Framework**
 
-  - [x] Generic worklist algorithm
-  - [x] Support for forward and backward analyses
-  - [x] Extensible analysis base class
+  - [x] Generic analysis infrastructure
+  - [x] Forward/backward analysis support
+  - [x] Extensible lattice framework
 
 - [x] **Initial Analyses**
   - [x] Reaching Definitions Analysis
@@ -40,81 +45,92 @@
 
 ### In Progress
 
-- [ ] **Additional Analyses**
+- [ ] **Advanced Analyses**
 
   - [ ] Available Expressions Analysis
   - [ ] Very Busy Expressions Analysis
   - [ ] Dominance Analysis
 
-- [ ] **Framework Enhancements**
-  - [ ] Performance optimizations
-  - [ ] Complex data flow lattices
-  - [ ] Interprocedural analysis support
+- [ ] **Framework Extensions**
+  - [ ] Complex lattice support
+  - [ ] Interprocedural analysis
+  - [ ] Path-sensitive analysis
 
-## Phase 3: Advanced Features (⏳ Planned)
+## Phase 3: IR Enhancement (⏳ Planned)
 
-- [ ] **Enhanced Analysis Capabilities**
+- [ ] **Advanced IR Features**
 
-  - [ ] Pointer analysis
-  - [ ] Alias analysis
-  - [ ] Call graph analysis
-  - [ ] Data dependence analysis
+  - [ ] Exception handling representation
+  - [ ] Complex control flow patterns
+  - [ ] Meta-information support
 
-- [ ] **Optimization Infrastructure**
+- [ ] **Type System Extensions**
 
-  - [ ] Dead code elimination
-  - [ ] Constant folding
-  - [ ] Common subexpression elimination
-  - [ ] Loop optimizations
+  - [ ] Generic type support
+  - [ ] Union and intersection types
+  - [ ] Type inference hints
 
-- [ ] **Cross-Language Support**
-  - [ ] Language-specific analysis customization
-  - [ ] Cross-language type compatibility
-  - [ ] Universal symbol resolution
+- [ ] **Analysis Support Features**
+  - [ ] Alias information
+  - [ ] Side effect tracking
+  - [ ] Memory model abstractions
 
-## Phase 4: Documentation and Community (⏳ Planned)
+## Phase 4: Frontend Interface (⏳ Planned)
+
+- [ ] **Language Integration**
+
+  - [ ] Common frontend interface
+  - [ ] Language-specific type mapping
+  - [ ] AST-to-IR conversion support
+
+- [ ] **Source Mapping**
+  - [ ] Bidirectional source location tracking
+  - [ ] Debug information preservation
+  - [ ] Analysis result mapping
+
+## Phase 5: Analysis Tools (⏳ Planned)
+
+- [ ] **Visualization**
+
+  - [ ] Control flow graph visualization
+  - [ ] Analysis result visualization
+  - [ ] Interactive exploration tools
+
+- [ ] **Analysis Framework Tools**
+  - [ ] Analysis composition framework
+  - [ ] Result interpretation aids
+  - [ ] Performance profiling tools
+
+## Phase 6: Documentation and Integration (⏳ Planned)
 
 - [ ] **Documentation**
 
-  - [ ] User guides
-  - [ ] API documentation
-  - [ ] Analysis implementation guides
-  - [ ] Best practices documentation
-
-- [ ] **Community Support**
-  - [ ] Contributing guidelines
-  - [ ] Example analyses
-  - [ ] Integration examples
-  - [ ] Performance benchmarks
-
-## Phase 5: Integration and Tooling (⏳ Planned)
-
-- [ ] **Development Tools**
-
-  - [ ] IR visualization tools
-  - [ ] Analysis result visualization
-  - [ ] Performance profiling tools
+  - [ ] Framework architecture guide
+  - [ ] Analysis implementation tutorials
+  - [ ] API reference documentation
 
 - [ ] **Integration Support**
-  - [ ] Language frontend interfaces
-  - [ ] Optimization pass interfaces
-  - [ ] Analysis result exporters
+  - [ ] IDE integration guidelines
+  - [ ] Build tool integration
+  - [ ] CI/CD integration examples
 
 ## Future Considerations
 
 - [ ] **Advanced Analysis Features**
 
-  - [ ] Machine learning-based analyses
+  - [ ] Incremental analysis support
   - [ ] Parallel analysis execution
-  - [ ] Incremental analysis updates
+  - [ ] Machine learning integration
 
 - [ ] **Ecosystem Integration**
-  - [ ] IDE integration
-  - [ ] CI/CD pipeline integration
-  - [ ] Security scanning integration
+  - [ ] Analysis result export formats
+  - [ ] Tool integration protocols
+  - [ ] Plugin system
 
 Legend:
 
 - ✓ Completed
 - 🔄 In Progress
 - ⏳ Planned
+
+Note: This roadmap focuses on developing LaPair as an IR framework for program analysis. The goal is to provide robust infrastructure for analyzing programs, not implementing programs directly. Each phase builds upon this foundation to create a comprehensive program analysis toolkit.

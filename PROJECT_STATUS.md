@@ -1,96 +1,114 @@
 # Project Status
 
-## Current Status: Analysis Framework Development (In Progress)
+## Current Status: IR Framework Development
+
+LaPair is a specialized Intermediate Representation (IR) framework designed to support program analysis. The framework provides the infrastructure needed to analyze programs written in various languages, rather than implementing programs directly.
 
 ### Completed Features
 
 - [x] **Core IR Framework**
 
-  - Implemented a robust and extensible IR framework supporting multiple programming languages.
-  - Comprehensive instruction set covering arithmetic, memory, control flow, and type operations.
-  - Support for inter-procedural and inter-file analysis.
-  - Advanced type system and symbol table management.
-  - Parent-child relationships between IR components (Module, Function, BasicBlock, Instruction).
+  - Implemented a robust IR that serves as a foundation for program analysis
+  - Designed to represent programs from multiple source languages in a unified format
+  - Support for inter-procedural and inter-file analysis capabilities
+  - Advanced type system for representing complex language features
+  - Comprehensive symbol table management
 
-- [x] **Control Flow Analysis Module**
+- [x] **Analysis Infrastructure**
 
-  - Developed the `ControlFlowGraph` class in `lapair/analysis/control_flow.py`.
-  - Implemented CFG node representation, traversal methods, and graph construction.
-  - Added support for bidirectional control flow with predecessor/successor management.
-  - Created unit tests in `tests/analysis/test_control_flow.py`. All tests are passing.
+  - Control Flow Graph (CFG) construction and manipulation
+  - Generic data flow analysis framework supporting:
+    - Forward and backward analyses
+    - Custom lattices and meet operators
+    - Worklist algorithm implementation
 
-- [x] **Data Flow Analysis Framework**
+- [x] **Analysis Implementations**
 
-  - Developed the `DataFlowAnalysis` base class in `lapair/analysis/data_flow.py`.
-  - Implemented generic worklist algorithm supporting both forward and backward analyses.
-  - Created unit tests in `tests/analysis/test_data_flow.py`. All tests are passing.
+  - Reaching Definitions Analysis
+  - Live Variable Analysis
+  - Constant Propagation Analysis
+  - Each analysis thoroughly tested with high coverage
 
-- [x] **Reaching Definitions Analysis**
-
-  - Implemented `ReachingDefinitionsAnalysis` in `lapair/analysis/data_flow.py`.
-  - The analysis computes the set of definitions reaching each point in the program.
-  - Added unit tests to verify correctness. All tests are passing.
-
-- [x] **Live Variable Analysis**
-
-  - Implemented `LiveVariableAnalysis` in `lapair/analysis/data_flow.py`.
-  - The analysis determines which variables are live at each program point.
-  - Added unit tests to verify correctness. All tests are passing.
-
-- [x] **Constant Propagation Analysis**
-  - Implemented `ConstantPropagationAnalysis` in `lapair/analysis/data_flow.py`.
-  - The analysis tracks which variables hold constant values throughout the program.
-  - Handles direct assignments, variable copies, and operations with constant operands.
-  - Added unit tests to verify correctness. All tests are passing.
+- [x] **Frontend Interface**
+  - Common interface for language-specific frontends
+  - Abstract syntax tree to IR conversion support
+  - Type mapping infrastructure
 
 ### Next Steps
 
-- **Implement Additional Data Flow Analyses**
+- **Enhance Analysis Framework**
 
   - [ ] Available Expressions Analysis
   - [ ] Very Busy Expressions Analysis
   - [ ] Dominance Analysis
+  - [ ] Support for more complex data flow lattices
+  - [ ] Interprocedural analysis capabilities
 
-- **Enhance Analysis Capabilities**
+- **Improve IR Capabilities**
 
-  - [ ] Optimize data structures and algorithms for performance.
-  - [ ] Support more complex data flow lattices.
-  - [ ] Implement interprocedural analysis.
-  - [ ] Add support for pointer analysis.
+  - [ ] Enhanced type system for advanced language features
+  - [ ] Support for more complex control flow structures
+  - [ ] Improved symbol resolution and scope handling
 
-- **Expand Documentation**
-  - [ ] Develop user guides and API documentation for the analysis modules.
-  - [ ] Provide examples demonstrating how to use and extend the analysis framework.
-  - [ ] Document best practices for implementing new analyses.
+- **Documentation and Examples**
+  - [ ] Comprehensive API documentation
+  - [ ] Analysis implementation guides
+  - [ ] Example analysis implementations
+  - [ ] Frontend integration examples
 
 ## Latest Updates
 
-- **Constant Propagation Analysis**: Implemented and thoroughly tested constant propagation analysis, which tracks constant values through assignments and operations.
-- **Control Flow Graph Enhancements**: Added support for bidirectional control flow with proper predecessor/successor management.
-- **Data Flow Framework Improvements**: Enhanced the framework to better support both forward and backward analyses.
-- **Testing Suite Expansion**: Added comprehensive tests for all new analyses and features.
-- **All Tests Passing**: Confirmed that all tests pass with `pytest -v`, ensuring code stability.
+- **Analysis Framework Enhancement**: Implemented and thoroughly tested constant propagation analysis
+- **IR Framework Improvements**: Added support for bidirectional control flow
+- **Documentation**: Updated to clarify framework's purpose and usage
+- **Testing**: Comprehensive test suite with high coverage
 
 ## Known Issues
 
-- None at this time.
+- None at this time
 
 ## Development Priorities
 
-1. **Implement Additional Data Flow Analyses**
-   - Focus on analyses critical for program optimization and vulnerability detection.
-2. **Optimize Analysis Framework**
-   - Improve performance to handle large and complex codebases efficiently.
-3. **Enhance Integration with the IR**
-   - Ensure that the analysis framework seamlessly integrates with the IR for use in optimization passes.
+1. **Analysis Framework Enhancement**
+
+   - Focus on implementing additional analyses
+   - Improve analysis infrastructure for better performance
+   - Add support for more complex analyses
+
+2. **IR Framework Optimization**
+
+   - Enhance type system capabilities
+   - Improve memory efficiency
+   - Optimize data structures for large programs
+
+3. **Documentation and Examples**
+   - Create comprehensive documentation
+   - Provide example analyses
+   - Document best practices
 
 ## Technical Challenges
 
-- **Scalability and Performance**
-  - Ensuring that analyses perform efficiently on large codebases with complex control flow.
-- **Cross-Language Compatibility**
-  - Designing analyses that work consistently across different programming languages represented in the IR.
-- **Extensibility**
-  - Maintaining a clean and extensible architecture as more analyses are added.
 - **Analysis Precision**
-  - Balancing analysis precision with performance requirements.
+
+  - Balancing analysis precision with performance
+  - Handling complex language features in analyses
+
+- **Framework Extensibility**
+
+  - Maintaining clean interfaces for new analyses
+  - Supporting diverse language features
+
+- **Performance**
+  - Optimizing for large codebases
+  - Efficient data structure design
+
+## Notes for Contributors
+
+LaPair is focused on providing infrastructure for program analysis. When contributing:
+
+- Focus on IR representation and analysis capabilities
+- Consider how features support program analysis tasks
+- Think about extensibility for different types of analyses
+- Maintain clear separation between IR and analysis components
+
+Remember: LaPair is not a programming language implementation - it's a framework for analyzing programs written in other languages.
