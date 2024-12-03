@@ -130,6 +130,30 @@ MultilingualIR/fast:
 	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/build
 .PHONY : MultilingualIR/fast
 
+CPPParser.o: CPPParser.cpp.o
+.PHONY : CPPParser.o
+
+# target to build an object file
+CPPParser.cpp.o:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o
+.PHONY : CPPParser.cpp.o
+
+CPPParser.i: CPPParser.cpp.i
+.PHONY : CPPParser.i
+
+# target to preprocess a source file
+CPPParser.cpp.i:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.i
+.PHONY : CPPParser.cpp.i
+
+CPPParser.s: CPPParser.cpp.s
+.PHONY : CPPParser.s
+
+# target to generate assembly for a file
+CPPParser.cpp.s:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.s
+.PHONY : CPPParser.cpp.s
+
 IREdge.o: IREdge.cpp.o
 .PHONY : IREdge.o
 
@@ -153,6 +177,30 @@ IREdge.s: IREdge.cpp.s
 IREdge.cpp.s:
 	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.s
 .PHONY : IREdge.cpp.s
+
+IRGenerator.o: IRGenerator.cpp.o
+.PHONY : IRGenerator.o
+
+# target to build an object file
+IRGenerator.cpp.o:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o
+.PHONY : IRGenerator.cpp.o
+
+IRGenerator.i: IRGenerator.cpp.i
+.PHONY : IRGenerator.i
+
+# target to preprocess a source file
+IRGenerator.cpp.i:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.i
+.PHONY : IRGenerator.cpp.i
+
+IRGenerator.s: IRGenerator.cpp.s
+.PHONY : IRGenerator.s
+
+# target to generate assembly for a file
+IRGenerator.cpp.s:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.s
+.PHONY : IRGenerator.cpp.s
 
 IRNode.o: IRNode.cpp.o
 .PHONY : IRNode.o
@@ -178,30 +226,6 @@ IRNode.cpp.s:
 	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.s
 .PHONY : IRNode.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,15 +235,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MultilingualIR"
+	@echo "... CPPParser.o"
+	@echo "... CPPParser.i"
+	@echo "... CPPParser.s"
 	@echo "... IREdge.o"
 	@echo "... IREdge.i"
 	@echo "... IREdge.s"
+	@echo "... IRGenerator.o"
+	@echo "... IRGenerator.i"
+	@echo "... IRGenerator.s"
 	@echo "... IRNode.o"
 	@echo "... IRNode.i"
 	@echo "... IRNode.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

@@ -303,12 +303,12 @@ CMakeFiles/clang-tablegen-targets.dir/clean:
 src/CMakeFiles/MultilingualIR.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=1,2,3,4 "Built target MultilingualIR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target MultilingualIR"
 .PHONY : src/CMakeFiles/MultilingualIR.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/MultilingualIR.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/projects/lava/lapair/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/projects/lava/lapair/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/MultilingualIR.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/projects/lava/lapair/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/MultilingualIR.dir/rule

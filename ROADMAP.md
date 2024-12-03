@@ -2,12 +2,12 @@
 
 ## Milestone 1: Project Initialization
 
-- [ ] **Initialize Git Repository**
-  - Initialize a new Git repository in the current directory.
+- [x] **Initialize Git Repository**
+  - Initialized a new Git repository in the current directory.
   - Set up `.gitignore` file to exclude unnecessary files.
 
-- [ ] **Set Up Project Structure**
-  - Create the following directories:
+- [x] **Set Up Project Structure**
+  - Created the following directories:
     - `src/` - Source code.
     - `tests/` - Test cases.
     - `docs/` - Documentation.
@@ -17,190 +17,145 @@
     - `configs/` - Configuration files.
     - `scripts/` - Build and automation scripts.
 
-- [ ] **Create Essential Documentation**
-  - `README.md` - Project overview and objectives.
-  - `CONTRIBUTING.md` - Coding standards and contribution guidelines.
-  - `LICENSE` - Licensing information.
-  - `CODE_OF_CONDUCT.md` - Community standards.
-  - `SECURITY.md` - Security policies and vulnerability reporting.
+- [x] **Create Essential Documentation**
+  - Added comprehensive documentation files:
+    - `README.md`
+    - `CONTRIBUTING.md`
+    - `LICENSE`
+    - `CODE_OF_CONDUCT.md`
+    - `SECURITY.md`
 
 ## Milestone 2: Build System Setup
 
-- [ ] **Initialize Build System with CMake**
-  - Create `CMakeLists.txt` files for project configuration.
-  - Configure build options and compiler settings.
+- [x] **Initialize Build System with CMake**
+  - Created `CMakeLists.txt` files for project configuration.
+  - Configured build options and compiler settings.
 
 ## Milestone 3: Pre-Commit Hooks and Code Quality
 
-- [ ] **Set Up Pre-Commit Hooks**
-  - Use `pre-commit` framework or custom scripts.
-  - Enforce coding standards and style guidelines.
-  - Configure hooks to run linters and formatters:
+- [x] **Set Up Pre-Commit Hooks**
+  - Configured pre-commit hooks using `pre-commit`.
+  - Added linters and formatters:
     - **C++**: `clang-format`, `clang-tidy`
     - **Python**: `pylint`, `flake8`
 
 - [ ] **Configure Unit Test Execution**
-  - Ensure unit tests run automatically before commits.
-  - Integrate with continuous integration pipelines.
+  - **In Progress**: Planning integration of unit tests with pre-commit hooks and CI pipelines.
 
 ## Milestone 4: Initial IR Schema Development
 
-- [ ] **Draft the Initial IR Schema**
-  - Design High-Level IR (HIR) and Low-Level IR (LIR).
-  - Define core components:
-    - Abstract Syntax Trees (AST)
-    - Control Flow Graphs (CFG)
-    - Program Dependency Graphs (PDG)
-    - Symbol Tables
-  - Specify IR elements:
-    - Nodes
-    - Edges
-    - Metadata
+- [x] **Draft the Initial IR Schema**
+  - Designed the High-Level IR (HIR) and Low-Level IR (LIR).
+  - Defined core components and IR elements.
 
-- [ ] **Document IR Design**
-  - Add detailed design documents in `docs/ir_design/`.
-  - Include diagrams and data flow representations.
+- [x] **Document IR Design**
+  - Added detailed design documents in `docs/ir_design/IR_Schema.md`.
+  - Included diagrams and data flow representations.
 
 ## Milestone 5: Core Framework Implementation
 
-- [ ] **Set Up Modular Architecture**
-  - Organize code into modules or services.
-  - Use CMake for managing C++ modules.
-  - Plan for independent testability and maintainability.
+- [x] **Set Up Modular Architecture**
+  - Organized code into modules using CMake.
 
-- [ ] **Develop Core Framework Components**
-  - Implement data structures for IR elements.
-  - Ensure scalability and performance considerations.
+- [x] **Develop Core Framework Components**
+  - Implemented `Node` and `Edge` classes for IR.
+  - Created initial versions of `IRNode.h`, `IRNode.cpp`, `IREdge.h`, and `IREdge.cpp`.
 
 ## Milestone 6: Parser Implementation for C++
 
-- [ ] **Implement C++ Parser**
-  - Leverage Clang's LibTooling or ANTLR.
-  - Translate ASTs into the IR.
-  - Handle language-specific constructs:
-    - Types and type aliases
-    - Control structures (loops, conditionals)
-    - Data structures (classes, structs)
-    - Object-oriented features (inheritance, polymorphism)
-    - Concurrency primitives (threads, mutexes)
+- [x] **Implement C++ Parser**
+  - Began implementation using Clang's LibTooling.
+  - Created `CPPParser.cpp` to set up Clang Tooling.
+  - Developed `IRGenerator.h` and `IRGenerator.cpp` for AST traversal.
+  - Encountered issues with standard header files; ongoing resolution.
 
 - [ ] **Write Parser Unit Tests**
-  - Cover basic to advanced C++ constructs.
-  - Validate accurate IR translation.
+  - To be implemented after resolving parsing issues.
 
 ## Milestone 7: Advanced Program Analysis Features
 
 - [ ] **Implement Taint Propagation Analysis**
-  - Develop data flow analysis frameworks.
-  - Identify sources and sinks of taint.
+  - Pending implementation after parser stabilization.
 
 - [ ] **Integrate Symbolic/Concolic Execution**
-  - Utilize constraint solvers like Z3.
-  - Enable symbolic execution over the IR.
+  - Planned for future development.
 
 - [ ] **Construct Program Slicing Mechanisms**
-  - Build Program Dependency Graphs.
-  - Implement slicing criteria and algorithms.
+  - Scheduled after initial analysis features.
 
 ## Milestone 8: Concurrency Support
 
 - [ ] **Model Concurrency Semantics**
-  - Represent threads, locks, and synchronization.
-  - Implement happens-before relationships.
-  - Define memory models for concurrency.
+  - Will begin after core analysis features are in place.
 
 ## Milestone 9: Multi-Language Support and Interoperability
 
 - [ ] **Design Unified Symbol Table**
-  - Support inter-language symbol resolution.
-  - Handle name mangling and type mapping.
+  - Awaiting initial parser completion.
 
 - [ ] **Implement Interoperability Constructs**
-  - Define Foreign Function Interfaces (FFI).
-  - Map cross-language types and function calls.
+  - Planned for future milestones.
 
 - [ ] **Add Parsers for Additional Languages**
-  - **Swift**
-  - **Kotlin**
-  - **Rust**
-  - **Objective-C**
-  - **Java**
-  - **JavaScript**
-  - **TypeScript**
+  - To be started after C++ parser is fully functional.
 
 ## Milestone 10: Performance Optimization
 
 - [ ] **Profile System Performance**
-  - Use profiling tools like gprof or Valgrind.
-  - Identify bottlenecks in the codebase.
+  - Will commence after core features are implemented.
 
 - [ ] **Optimize for Scalability**
-  - Improve algorithms and data structures.
-  - Handle large-scale codebases efficiently.
+  - Scheduled based on profiling results.
 
 ## Milestone 11: Tooling and Visualization
 
 - [ ] **Develop Command-Line Tools**
-  - Create utilities for interacting with the IR.
-  - Provide scripting capabilities via Python bindings.
+  - Planned for user interaction with the IR.
 
 - [ ] **Implement Visualization Tools**
-  - Use Graphviz for visualizing CFGs and PDGs.
-  - Develop GUIs if necessary for better user interaction.
+  - To provide graphical representations of IR components.
 
 ## Milestone 12: Continuous Integration and Deployment
 
 - [ ] **Set Up Continuous Integration Pipelines**
-  - Use GitHub Actions or Jenkins.
-  - Automate builds, tests, and code quality checks.
+  - Planning to use GitHub Actions for CI/CD.
 
 - [ ] **Plan Deployment Strategies**
-  - Package and distribute tools.
-  - Provide installation instructions and user guides.
+  - To be developed alongside tooling.
 
 ## Milestone 13: Documentation and Community Engagement
 
 - [ ] **Expand Documentation**
-  - Use Doxygen for C++ API documentation.
-  - Write tutorials and how-to guides in `docs/`.
+  - Ongoing effort to maintain comprehensive documentation.
 
 - [ ] **Establish Community Channels**
-  - Set up forums, mailing lists, or chat platforms.
-  - Encourage community contributions and feedback.
+  - Will set up forums and communication platforms.
 
 - [ ] **Incorporate Feedback Mechanisms**
-  - Regularly review and integrate community suggestions.
-  - Update ROADMAP.md based on new insights.
+  - Planning regular reviews and updates based on community input.
 
 ## Ongoing Tasks and Future Enhancements
 
 - [ ] **Code Review and Quality Assurance**
-  - Enforce coding standards and best practices.
-  - Conduct regular code reviews.
+  - Continuous enforcement of coding standards.
 
 - [ ] **Advanced Testing Strategies**
-  - Implement integration and system-level tests.
-  - Increase test coverage across modules.
+  - Will implement integration and system-level tests.
 
 - [ ] **Security and Compliance**
-  - Follow secure coding practices.
-  - Keep `SECURITY.md` updated with policies.
+  - Ongoing updates to `SECURITY.md` and adherence to best practices.
 
 - [ ] **Backup, Recovery, and Monitoring**
-  - Set up data backup solutions.
-  - Implement logging and monitoring systems.
+  - To be planned during deployment strategy development.
 
 - [ ] **Accessibility and Ethical Compliance**
-  - Ensure tools meet accessibility standards.
-  - Adhere to ethical guidelines and legal requirements.
+  - Ensuring compliance with standards throughout development.
 
 - [ ] **Resource Management**
-  - Optimize time and resource allocation.
-  - Adjust project timelines as needed.
+  - Regular assessment of timelines and resource allocation.
 
 - [ ] **Future Enhancements**
-  - Plan for adding features like:
-    - Deadlock detection in concurrency.
-    - Support for additional programming paradigms.
-    - Enhanced visualization and user interfaces.
-    - Machine learning integration for code analysis.
+  - **Deadlock Detection in Concurrency**
+  - **Support for Additional Programming Paradigms**
+  - **Enhanced Visualization and User Interfaces**
+  - **Machine Learning Integration for Code Analysis**

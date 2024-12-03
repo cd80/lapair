@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o"
+  "CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o.d"
   "CMakeFiles/MultilingualIR.dir/IREdge.cpp.o"
   "CMakeFiles/MultilingualIR.dir/IREdge.cpp.o.d"
+  "CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o"
+  "CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o.d"
   "CMakeFiles/MultilingualIR.dir/IRNode.cpp.o"
   "CMakeFiles/MultilingualIR.dir/IRNode.cpp.o.d"
-  "CMakeFiles/MultilingualIR.dir/main.cpp.o"
-  "CMakeFiles/MultilingualIR.dir/main.cpp.o.d"
   "MultilingualIR"
   "MultilingualIR.pdb"
 )

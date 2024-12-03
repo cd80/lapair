@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "/Users/user/projects/lava/lapair/tests",
+    "arguments": [
+      "/usr/bin/clang++",
+      "-std=c++17",
+      "-isysroot",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-c",
+      "sample.cpp"
+    ],
+    "file": "sample.cpp"
+  }
+]

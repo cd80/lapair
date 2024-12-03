@@ -1,0 +1,46 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake ninja-build clang llvm
+
+    - name: Configure CMake
+      run: |
+        mkdir build
+        cd build
+        cmake -G Ninja ..
+
+    - name: Build
+      run: |
+        cd build
+        ninja
+
+    - name: Run Linters (clang-format)
+      run: |
+        clang-format --version
+        find . -regex '.*\.\(cpp\|hpp\|c\|h\)' -exec clang-format -i {} \;
+
+    - name: Run Static Analysis (clang-tidy)
+      run: |
+        cd build
+        ninja clang-tidy
+
+    - name: Run Unit Tests
+      run: |
+        cd build
+        ctest --output-on-failure

@@ -69,19 +69,19 @@ include src/CMakeFiles/MultilingualIR.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/MultilingualIR.dir/flags.make
 
-src/CMakeFiles/MultilingualIR.dir/main.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
-src/CMakeFiles/MultilingualIR.dir/main.cpp.o: /Users/user/projects/lava/lapair/src/main.cpp
-src/CMakeFiles/MultilingualIR.dir/main.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/MultilingualIR.dir/main.cpp.o"
-	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/main.cpp.o -MF CMakeFiles/MultilingualIR.dir/main.cpp.o.d -o CMakeFiles/MultilingualIR.dir/main.cpp.o -c /Users/user/projects/lava/lapair/src/main.cpp
+src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
+src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o: /Users/user/projects/lava/lapair/src/CPPParser.cpp
+src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o -MF CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o.d -o CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o -c /Users/user/projects/lava/lapair/src/CPPParser.cpp
 
-src/CMakeFiles/MultilingualIR.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/main.cpp.i"
-	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/main.cpp > CMakeFiles/MultilingualIR.dir/main.cpp.i
+src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/CPPParser.cpp.i"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/CPPParser.cpp > CMakeFiles/MultilingualIR.dir/CPPParser.cpp.i
 
-src/CMakeFiles/MultilingualIR.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/main.cpp.s"
-	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/main.cpp -o CMakeFiles/MultilingualIR.dir/main.cpp.s
+src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/CPPParser.cpp.s"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/CPPParser.cpp -o CMakeFiles/MultilingualIR.dir/CPPParser.cpp.s
 
 src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
 src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o: /Users/user/projects/lava/lapair/src/IRNode.cpp
@@ -111,21 +111,73 @@ src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/IREdge.cpp.s"
 	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/IREdge.cpp -o CMakeFiles/MultilingualIR.dir/IREdge.cpp.s
 
+src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
+src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o: /Users/user/projects/lava/lapair/src/IRGenerator.cpp
+src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o -MF CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o.d -o CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o -c /Users/user/projects/lava/lapair/src/IRGenerator.cpp
+
+src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.i"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/IRGenerator.cpp > CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.i
+
+src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.s"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/IRGenerator.cpp -o CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.s
+
 # Object files for target MultilingualIR
 MultilingualIR_OBJECTS = \
-"CMakeFiles/MultilingualIR.dir/main.cpp.o" \
+"CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o" \
 "CMakeFiles/MultilingualIR.dir/IRNode.cpp.o" \
-"CMakeFiles/MultilingualIR.dir/IREdge.cpp.o"
+"CMakeFiles/MultilingualIR.dir/IREdge.cpp.o" \
+"CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o"
 
 # External object files for target MultilingualIR
 MultilingualIR_EXTERNAL_OBJECTS =
 
-src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/main.cpp.o
+src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/CPPParser.cpp.o
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o
+src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/IRGenerator.cpp.o
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/build.make
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMSupport.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMCore.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMIRReader.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangTooling.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangBasic.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangASTMatchers.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMAsmParser.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMBitReader.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMCore.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMBinaryFormat.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMRemarks.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMTargetParser.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMBitstreamReader.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMSupport.a
+src/MultilingualIR: /opt/homebrew/lib/libz3.dylib
+src/MultilingualIR: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/lib/libz.tbd
+src/MultilingualIR: /opt/homebrew/lib/libzstd.dylib
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVMDemangle.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangFormat.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangToolingInclusions.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangFrontend.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangDriver.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangParse.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangSerialization.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangSema.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangAPINotes.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangEdit.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangAnalysis.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangASTMatchers.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangAST.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangSupport.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangToolingCore.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangRewrite.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangLex.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libclangBasic.a
+src/MultilingualIR: /opt/homebrew/opt/llvm/lib/libLLVM.dylib
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable MultilingualIR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MultilingualIR"
 	cd /Users/user/projects/lava/lapair/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MultilingualIR.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
