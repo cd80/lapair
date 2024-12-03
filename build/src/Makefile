@@ -130,6 +130,54 @@ MultilingualIR/fast:
 	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/build
 .PHONY : MultilingualIR/fast
 
+IREdge.o: IREdge.cpp.o
+.PHONY : IREdge.o
+
+# target to build an object file
+IREdge.cpp.o:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o
+.PHONY : IREdge.cpp.o
+
+IREdge.i: IREdge.cpp.i
+.PHONY : IREdge.i
+
+# target to preprocess a source file
+IREdge.cpp.i:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.i
+.PHONY : IREdge.cpp.i
+
+IREdge.s: IREdge.cpp.s
+.PHONY : IREdge.s
+
+# target to generate assembly for a file
+IREdge.cpp.s:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.s
+.PHONY : IREdge.cpp.s
+
+IRNode.o: IRNode.cpp.o
+.PHONY : IRNode.o
+
+# target to build an object file
+IRNode.cpp.o:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o
+.PHONY : IRNode.cpp.o
+
+IRNode.i: IRNode.cpp.i
+.PHONY : IRNode.i
+
+# target to preprocess a source file
+IRNode.cpp.i:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.i
+.PHONY : IRNode.cpp.i
+
+IRNode.s: IRNode.cpp.s
+.PHONY : IRNode.s
+
+# target to generate assembly for a file
+IRNode.cpp.s:
+	cd /Users/user/projects/lava/lapair/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/MultilingualIR.dir/build.make src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.s
+.PHONY : IRNode.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -163,6 +211,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MultilingualIR"
+	@echo "... IREdge.o"
+	@echo "... IREdge.i"
+	@echo "... IREdge.s"
+	@echo "... IRNode.o"
+	@echo "... IRNode.i"
+	@echo "... IRNode.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

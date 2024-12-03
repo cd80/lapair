@@ -73,27 +73,59 @@ src/CMakeFiles/MultilingualIR.dir/main.cpp.o: src/CMakeFiles/MultilingualIR.dir/
 src/CMakeFiles/MultilingualIR.dir/main.cpp.o: /Users/user/projects/lava/lapair/src/main.cpp
 src/CMakeFiles/MultilingualIR.dir/main.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/MultilingualIR.dir/main.cpp.o"
-	cd /Users/user/projects/lava/lapair/build/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/main.cpp.o -MF CMakeFiles/MultilingualIR.dir/main.cpp.o.d -o CMakeFiles/MultilingualIR.dir/main.cpp.o -c /Users/user/projects/lava/lapair/src/main.cpp
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/main.cpp.o -MF CMakeFiles/MultilingualIR.dir/main.cpp.o.d -o CMakeFiles/MultilingualIR.dir/main.cpp.o -c /Users/user/projects/lava/lapair/src/main.cpp
 
 src/CMakeFiles/MultilingualIR.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/main.cpp.i"
-	cd /Users/user/projects/lava/lapair/build/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/main.cpp > CMakeFiles/MultilingualIR.dir/main.cpp.i
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/main.cpp > CMakeFiles/MultilingualIR.dir/main.cpp.i
 
 src/CMakeFiles/MultilingualIR.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/main.cpp.s"
-	cd /Users/user/projects/lava/lapair/build/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/main.cpp -o CMakeFiles/MultilingualIR.dir/main.cpp.s
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/main.cpp -o CMakeFiles/MultilingualIR.dir/main.cpp.s
+
+src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
+src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o: /Users/user/projects/lava/lapair/src/IRNode.cpp
+src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o -MF CMakeFiles/MultilingualIR.dir/IRNode.cpp.o.d -o CMakeFiles/MultilingualIR.dir/IRNode.cpp.o -c /Users/user/projects/lava/lapair/src/IRNode.cpp
+
+src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/IRNode.cpp.i"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/IRNode.cpp > CMakeFiles/MultilingualIR.dir/IRNode.cpp.i
+
+src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/IRNode.cpp.s"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/IRNode.cpp -o CMakeFiles/MultilingualIR.dir/IRNode.cpp.s
+
+src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o: src/CMakeFiles/MultilingualIR.dir/flags.make
+src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o: /Users/user/projects/lava/lapair/src/IREdge.cpp
+src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o: src/CMakeFiles/MultilingualIR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o -MF CMakeFiles/MultilingualIR.dir/IREdge.cpp.o.d -o CMakeFiles/MultilingualIR.dir/IREdge.cpp.o -c /Users/user/projects/lava/lapair/src/IREdge.cpp
+
+src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MultilingualIR.dir/IREdge.cpp.i"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/user/projects/lava/lapair/src/IREdge.cpp > CMakeFiles/MultilingualIR.dir/IREdge.cpp.i
+
+src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MultilingualIR.dir/IREdge.cpp.s"
+	cd /Users/user/projects/lava/lapair/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/user/projects/lava/lapair/src/IREdge.cpp -o CMakeFiles/MultilingualIR.dir/IREdge.cpp.s
 
 # Object files for target MultilingualIR
 MultilingualIR_OBJECTS = \
-"CMakeFiles/MultilingualIR.dir/main.cpp.o"
+"CMakeFiles/MultilingualIR.dir/main.cpp.o" \
+"CMakeFiles/MultilingualIR.dir/IRNode.cpp.o" \
+"CMakeFiles/MultilingualIR.dir/IREdge.cpp.o"
 
 # External object files for target MultilingualIR
 MultilingualIR_EXTERNAL_OBJECTS =
 
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/main.cpp.o
+src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o
+src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/build.make
 src/MultilingualIR: src/CMakeFiles/MultilingualIR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MultilingualIR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/user/projects/lava/lapair/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable MultilingualIR"
 	cd /Users/user/projects/lava/lapair/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MultilingualIR.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

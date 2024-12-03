@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/Users/user/projects/lava/lapair/build/src",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/opt/llvm/include -I/Users/user/projects/lava/lapair/src -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1 -o CMakeFiles/MultilingualIR.dir/main.cpp.o -c /Users/user/projects/lava/lapair/src/main.cpp",
+  "file": "/Users/user/projects/lava/lapair/src/main.cpp",
+  "output": "src/CMakeFiles/MultilingualIR.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/user/projects/lava/lapair/build/src",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/opt/llvm/include -I/Users/user/projects/lava/lapair/src -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1 -o CMakeFiles/MultilingualIR.dir/IRNode.cpp.o -c /Users/user/projects/lava/lapair/src/IRNode.cpp",
+  "file": "/Users/user/projects/lava/lapair/src/IRNode.cpp",
+  "output": "src/CMakeFiles/MultilingualIR.dir/IRNode.cpp.o"
+},
+{
+  "directory": "/Users/user/projects/lava/lapair/build/src",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/opt/llvm/include -I/Users/user/projects/lava/lapair/src -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.1 -o CMakeFiles/MultilingualIR.dir/IREdge.cpp.o -c /Users/user/projects/lava/lapair/src/IREdge.cpp",
+  "file": "/Users/user/projects/lava/lapair/src/IREdge.cpp",
+  "output": "src/CMakeFiles/MultilingualIR.dir/IREdge.cpp.o"
+}
+]
