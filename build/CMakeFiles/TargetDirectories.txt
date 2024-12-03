@@ -1,0 +1,7 @@
+/Users/user/projects/lava/lapair/build/CMakeFiles/edit_cache.dir
+/Users/user/projects/lava/lapair/build/CMakeFiles/rebuild_cache.dir
+/Users/user/projects/lava/lapair/build/src/CMakeFiles/MultilingualIR.dir
+/Users/user/projects/lava/lapair/build/src/CMakeFiles/edit_cache.dir
+/Users/user/projects/lava/lapair/build/src/CMakeFiles/rebuild_cache.dir
+/Users/user/projects/lava/lapair/build/tests/CMakeFiles/edit_cache.dir
+/Users/user/projects/lava/lapair/build/tests/CMakeFiles/rebuild_cache.dir
