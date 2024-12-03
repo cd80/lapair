@@ -30,72 +30,56 @@ The Multilingual Intermediate Representation (IR) System is designed to support 
 
 ## Recent Developments
 
-### Python Bindings Implementation
+### Program Slicing Module Implementation
 
-- **Purpose**: Enable scripting, tooling, and interoperability through Python.
-- **Implementation**:
-  - Utilized `pybind11` to create bindings for the core IR classes (`Node` and `Edge`).
-  - Created `bindings/pybind_module.cpp` to expose C++ classes to Python.
-  - Configured the build system with `bindings/CMakeLists.txt` and updated the root `CMakeLists.txt` to include `pybind11` using CMake's `FetchContent`.
-- **Features**:
-  - Exposed methods for property management, edge connections, and more.
-  - Enabled rapid prototyping and integration with Python scripts.
-- **Testing**:
-  - Developed `tests/test_bindings.py` to validate the Python bindings.
-  - Successfully executed the test script, confirming the functionality of the bindings.
-
-### Taint Propagation Analysis Implementation
-
-- **Purpose**: Implemented as part of advanced program analysis features to detect potential security vulnerabilities arising from untrusted data flows.
-- **Implementation**:
-  - Developed the `TaintAnalysis` class in `src/analysis/TaintAnalysis.h` and `src/analysis/TaintAnalysis.cpp`.
-  - Utilizes a worklist algorithm to propagate taint through the IR graph starting from specified entry points.
-  - Analyzes the IR to identify nodes (variables, functions) that are influenced by tainted data.
-- **Design Considerations**:
-  - The module is designed to be extensible for future enhancements, such as supporting multiple taint sources and sinks.
-  - Integrates seamlessly with existing IR structures (`Node` and `Edge` classes).
-  - Employs efficient traversal methods to handle large graphs.
-- **Testing**:
-  - Created `tests/TaintAnalysisTest.cpp` with comprehensive unit tests.
-  - Tests cover scenarios including successful taint propagation and cases where taint should not propagate.
-  - All tests are passing, confirming the correctness and reliability of the module.
-
-### Symbolic Execution Module Implementation
-
-- **Purpose**: The Symbolic Execution module enhances the system's analysis capabilities by allowing symbolic exploration of program execution paths, essential for detecting potential bugs, vulnerabilities, and unintended behaviors.
+- **Purpose**: The Program Slicing module extracts relevant parts of the program based on a specified criterion, aiding in debugging, optimization, and understanding of code dependencies.
 
 - **Implementation**:
-  - Developed the `SymbolicExecution` class in `src/analysis/SymbolicExecution.h` and `src/analysis/SymbolicExecution.cpp`.
-  - Implemented a basic symbolic execution engine that processes IR nodes symbolically.
-  - Capable of traversing the IR graph, handling branching, and maintaining symbolic state across nodes.
+  - Developed the `ProgramSlicing` class in `src/analysis/ProgramSlicing.h` and `src/analysis/ProgramSlicing.cpp`.
+  - Implemented both backward and forward slicing algorithms.
+  - Capable of computing slices based on a given node in the IR graph.
 
 - **Design Considerations**:
-  - Designed for extensibility, allowing future integration with constraint solvers like Z3 for path feasibility analysis.
-  - Optimized for efficient traversal to handle large and complex codebases.
+  - Designed for efficiency to handle large codebases.
+  - Integrated with the existing IR framework, utilizing the `Node` and `Edge` classes.
+  - Extensible for future enhancements, such as context-sensitive slicing.
 
 - **Testing**:
-  - Created `tests/SymbolicExecutionTest.cpp` with unit tests covering basic execution and branching scenarios.
+  - Created `tests/ProgramSlicingTest.cpp` with unit tests covering backward and forward slicing scenarios.
   - Updated `tests/CMakeLists.txt` to include the new test executable.
   - All tests are passing, confirming the correct functioning of the module.
 
-### Adjustments to IR Classes
+### Previous Developments
 
-- **Property Management in `Node` and `Edge` Classes**:
-  - Added `setProperty` and `getProperty` methods to `IRNode.h` and `IRNode.cpp`.
-  - Ensured consistency across IR classes for property handling.
-  - Facilitates annotation of IR elements with metadata required for analyses.
+#### Symbolic Execution Module Implementation
 
-## Concurrency Support
+- **Purpose**: Enables symbolic exploration of program execution paths to detect potential bugs and vulnerabilities.
+- **Implementation**:
+  - Developed the `SymbolicExecution` class.
+  - Processes IR nodes symbolically, handling branching and maintaining symbolic state.
+- **Testing**:
+  - Created `tests/SymbolicExecutionTest.cpp` with unit tests covering execution scenarios.
+  - All tests are passing.
 
-- Models threads, locks, and synchronization mechanisms.
-- Accurately represents concurrency constructs in the IR.
-- Facilitates analyses like race condition detection and deadlock prevention.
+#### Taint Propagation Analysis Implementation
 
-## Avoiding Full Compilation
+- **Purpose**: Detects security vulnerabilities arising from untrusted data flows.
+- **Implementation**:
+  - Developed the `TaintAnalysis` class.
+  - Propagates taint through the IR graph from specified entry points.
+- **Testing**:
+  - Created `tests/TaintAnalysisTest.cpp` with comprehensive unit tests.
+  - All tests are passing.
 
-- Utilizes source-level parsing to minimize overhead.
-- Employs partial compilation techniques where necessary.
-- Handles duplicate symbol resolution gracefully to manage multiple definitions.
+#### Python Bindings Implementation
+
+- **Purpose**: Provides scripting, tooling, and interoperability through Python.
+- **Implementation**:
+  - Utilized `pybind11` to create bindings for the `Node` and `Edge` classes.
+  - Configured the build system to include the bindings.
+- **Testing**:
+  - Developed `tests/test_bindings.py` to validate the Python bindings.
+  - Successfully executed the test script.
 
 ## Future Enhancements
 
@@ -104,8 +88,7 @@ The Multilingual Intermediate Representation (IR) System is designed to support 
 - **Additional Language Support**:
   - Plan to add parsers for Swift, Kotlin, Rust, and more.
 - **Advanced Analyses**:
-  - Implement program slicing mechanisms.
-  - Develop modules for deadlock detection and energy consumption analysis.
+  - Develop modules for concurrency analysis, deadlock detection, and energy consumption analysis.
 - **Community Feedback Integration**:
   - Establish channels for user input and collaboration.
   - Encourage contributions to expand capabilities and improve the system.

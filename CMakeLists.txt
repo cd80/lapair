@@ -41,6 +41,7 @@ add_library(MultilingualIRLib STATIC
     src/IRGenerator.cpp
     src/analysis/TaintAnalysis.cpp
     src/analysis/SymbolicExecution.cpp
+    src/analysis/ProgramSlicing.cpp
 )
 
 # Include directories for the library

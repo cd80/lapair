@@ -43,3 +43,8 @@ add_test(NAME TaintAnalysisTest COMMAND TaintAnalysisTest)
 add_executable(SymbolicExecutionTest SymbolicExecutionTest.cpp)
 target_link_libraries(SymbolicExecutionTest gtest gtest_main MultilingualIRLib)
 add_test(NAME SymbolicExecutionTest COMMAND SymbolicExecutionTest)
+
+# Add test executable for ProgramSlicingTest
+add_executable(ProgramSlicingTest ProgramSlicingTest.cpp)
+target_link_libraries(ProgramSlicingTest gtest gtest_main MultilingualIRLib)
+add_test(NAME ProgramSlicingTest COMMAND ProgramSlicingTest)

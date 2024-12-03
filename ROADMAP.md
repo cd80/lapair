@@ -52,18 +52,30 @@
 - [x] **Implement Python Bindings for IR Classes**
   - Utilized `pybind11` to create bindings for `Node` and `Edge` classes.
   - Created `bindings/pybind_module.cpp` and configured build with `bindings/CMakeLists.txt`.
-  - Updated `CMakeLists.txt` to include `pybind11` using `FetchContent`.
   - Successfully built the Python module `ir_bindings` and tested with `tests/test_bindings.py`.
 
 ## Milestone 8: Advanced Program Analysis Features
 
-- [ ] **Implement Taint Propagation Analysis**
-- [ ] **Integrate Symbolic/Concolic Execution**
-- [ ] **Construct Program Slicing Mechanisms**
+- [x] **Implement Taint Propagation Analysis**
+  - Developed `TaintAnalysis` module.
+  - Wrote unit tests in `tests/TaintAnalysisTest.cpp`.
+  - Updated documentation accordingly.
+
+- [x] **Integrate Symbolic/Concolic Execution**
+  - Developed `SymbolicExecution` module.
+  - Wrote unit tests in `tests/SymbolicExecutionTest.cpp`.
+  - Updated documentation accordingly.
+
+- [x] **Construct Program Slicing Mechanisms**
+  - Developed `ProgramSlicing` module.
+  - Wrote unit tests in `tests/ProgramSlicingTest.cpp`.
+  - Updated documentation accordingly.
 
 ## Milestone 9: Concurrency Support
 
 - [ ] **Model Concurrency Semantics**
+  - Plan and begin implementation of concurrency analysis modules.
+  - Design models for threads, locks, and synchronization mechanisms.
 
 ## Milestone 10: Multi-Language Support and Interoperability
 
@@ -84,7 +96,7 @@
 ## Milestone 13: Continuous Integration and Deployment
 
 - [x] **Set Up Continuous Integration Pipelines**
-  - Configured GitHub Actions pipeline in `.github/workflows/ci.yml`.
+  - Configured GitHub Actions pipeline.
   - Automated building, testing, and code quality checks.
 
 - [ ] **Plan Deployment Strategies**
@@ -93,7 +105,7 @@
 
 - [x] **Expand Documentation**
   - Updated `DESIGN.md` and `README.md` with recent developments.
-  - Documented Python bindings and usage instructions.
+  - Documented program slicing and usage instructions.
 
 - [ ] **Establish Community Channels**
 - [ ] **Incorporate Feedback Mechanisms**
