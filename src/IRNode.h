@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <unordered_map>
 
 namespace ir {
 
@@ -22,10 +23,16 @@ public:
     const std::vector<std::shared_ptr<Edge>>& getIncomingEdges() const;
     const std::vector<std::shared_ptr<Edge>>& getOutgoingEdges() const;
 
+    // Methods for properties
+    void setProperty(const std::string& key, const std::string& value);
+    std::string getProperty(const std::string& key) const;
+
 private:
     std::string id_;
     std::vector<std::shared_ptr<Edge>> incomingEdges_;
     std::vector<std::shared_ptr<Edge>> outgoingEdges_;
+
+    std::unordered_map<std::string, std::string> properties_;
 };
 
 } // namespace ir

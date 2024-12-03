@@ -14,12 +14,14 @@ repos:
         files: \.cpp$
         types: [c, c++]
 
--   repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.7.4
-    hooks:
-    -   id: pylint
+# Temporarily disabled pylint hook due to compatibility issues with Python 3.12
+# -   repo: https://github.com/pre-commit/mirrors-pylint
+#     rev: v2.17.4
+#     hooks:
+#     -   id: pylint
 
--   repo: https://github.com/pycqa/flake8
-    rev: 3.9.2
-    hooks:
-    -   id: flake8
+# Temporarily disabled flake8 hook due to compatibility issues with Python 3.12
+# -   repo: https://github.com/pycqa/flake8
+#     rev: 6.1.0
+#     hooks:
+#     -   id: flake8

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <unordered_map>
 
 namespace ir {
 
@@ -18,10 +19,15 @@ public:
     std::shared_ptr<Node> getSource() const;
     std::shared_ptr<Node> getTarget() const;
 
+    // Methods for properties
+    void setProperty(const std::string& key, const std::string& value);
+    std::string getProperty(const std::string& key) const;
+
 private:
     std::string id_;
     std::shared_ptr<Node> source_;
     std::shared_ptr<Node> target_;
+    std::unordered_map<std::string, std::string> properties_;
 };
 
 } // namespace ir

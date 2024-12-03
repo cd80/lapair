@@ -1,0 +1,29 @@
+# Ignore build directories
+build/
+
+# Ignore compiled binaries and object files
+*.o
+*.obj
+*.so
+*.dylib
+*.exe
+*.dll
+*.a
+*.lib
+
+# Ignore system files
+.DS_Store
+
+# Ignore compile_commands.json
+compile_commands.json
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Clang-Tidy and Clang-Format configuration files
+.clang-tidy
+.clang-format
+
+# Ignore other temporary files
+*.log
+*.tmp

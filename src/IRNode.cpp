@@ -1,11 +1,14 @@
+// Implementation of Node class methods
+
 #include "IRNode.h"
-#include "IREdge.h"
 
-using namespace ir;
+namespace ir {
 
-Node::Node(const std::string& id) : id_(id) {}
+Node::Node(const std::string& id)
+    : id_(id) {
+}
 
-Node::~Node() = default;
+Node::~Node() { }
 
 const std::string& Node::getId() const {
     return id_;
@@ -26,3 +29,20 @@ const std::vector<std::shared_ptr<Edge>>& Node::getIncomingEdges() const {
 const std::vector<std::shared_ptr<Edge>>& Node::getOutgoingEdges() const {
     return outgoingEdges_;
 }
+
+// Implement setProperty method
+void Node::setProperty(const std::string& key, const std::string& value) {
+    properties_[key] = value;
+}
+
+// Implement getProperty method
+std::string Node::getProperty(const std::string& key) const {
+    auto it = properties_.find(key);
+    if (it != properties_.end()) {
+        return it->second;
+    } else {
+        return "";
+    }
+}
+
+} // namespace ir
